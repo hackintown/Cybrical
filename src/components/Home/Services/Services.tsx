@@ -10,8 +10,16 @@ import {
 } from "./icons";
 import Button from "@/components/ui/Button";
 
-const Services = () => {
-  const servicesItem = [
+interface ServicesItem {
+  id: number;
+  itemIcon: JSX.Element;
+  label: string;
+  info: string;
+  readMore: string;
+}
+
+const Services: React.FC = () => {
+  const servicesItem: ServicesItem[] = [
     {
       id: 1,
       itemIcon: <WebSvg />,
@@ -82,9 +90,9 @@ const Services = () => {
           </div>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {servicesItem.map((service, idx) => (
+          {servicesItem.map((service) => (
             <li
-              key={idx}
+              key={service.id}
               className="bg-[#F9F9F9] rounded-xl w-full h-[345px] p-8 mx-3"
             >
               <div className="mb-4 w-11 h-11">{service.itemIcon}</div>
