@@ -89,11 +89,11 @@ const Services: React.FC = () => {
             <Button className="mt-6 font-base ">Browse All Services</Button>
           </div>
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5">
           {servicesItem.map((service) => (
             <li
               key={service.id}
-              className="bg-[#F9F9F9] rounded-xl w-full h-[345px] p-8 mx-3"
+              className="bg-[#F9F9F9] rounded-xl w-full h-[345px] p-8"
             >
               <div className="mb-4 w-11 h-11">{service.itemIcon}</div>
               <h2 className="text-[#1D3A36] font-semibold text-[18px] mb-3">

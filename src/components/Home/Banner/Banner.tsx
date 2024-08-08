@@ -11,8 +11,8 @@ const Banner = () => {
         <Image
           src="banner-bg-layer.svg"
           alt="banner-layer"
-          height={100}
-          width={100}
+          height={500}
+          width={500}
           loading="lazy"
           className="w-full h-auto"
         />
@@ -52,8 +52,8 @@ const Banner = () => {
       </div>
 
       {/* Rotated Section */}
-      <div className="bg-[#343434] transform rotate-[3deg] md:rotate-[1deg] py-2.5 md:py-3 -mt-7 sm:-mt-9 relative z-10">
-        <div className="flex items-center justify-between gap-x-4 sm:gap-x-6 md:gap-x-8 px-2">
+      <div className="bg-[#343434] transform rotate-[3deg] md:rotate-[1deg] py-2.5 md:py-3 -mt-7 -ml-2 -mr-2 sm:-mt-9 relative z-10">
+        <div className="flex items-center justify-between gap-x-6 sm:gap-x-6 md:gap-x-8 px-2">
           {[
             "Design",
             "Develop",

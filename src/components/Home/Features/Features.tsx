@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   QualitySvg,
@@ -20,6 +20,7 @@ interface FeaturesItem {
 }
 
 const Features = () => {
+  const [activeCard, setActiveCard] = useState<number | null>(0);
   const featuresItem: FeaturesItem[] = [
     {
       id: 1,
@@ -60,43 +61,37 @@ const Features = () => {
   ];
 
   return (
-    <div className="relative w-full">
-      <div className="absolute top-0 left-0 w-full">
-        <svg
-          viewBox="0 0 1600 1096"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 0H1600V1096H0V0Z" fill="#13182C" />
-        </svg>
-      </div>
-      <div className="absolute top-0 left-0 w-full">
-        <Image
-          src="/features-sec-layer.png"
-          className="w-full h-full object-cover"
-          width={500}
-          height={500}
-          alt="features-bg-layer"
-        />
-      </div>
-      <div className="absolute top-0 left-0 w-full pt-20 z-10">
+    <div className="relative">
+      {/* Mobile Background Image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-[top_right] md:hidden"
+        style={{ backgroundImage: "url('/images/mbl-services-bg.png')" }}
+      />
+      {/* Desktop Background Image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center hidden md:block"
+        style={{ backgroundImage: "url('/images/services-bg.png')" }}
+      />
+      <div className="relative w-full py-16 z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
-            <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-              <h5 className="text-[#01AA03] text-base font-semibold">
+            <div className="w-full lg:w-1/2 mb-3 lg:mb-4 text-center">
+              <h5 className="text-accent text-xs mb-1.5 font-semibold">
                 WEB AND MOBILE APP DEVELOPMENT
               </h5>
-              <h2 className="text-3xl lg:text-4xl font-semibold leading-snug text-white">
+              <h2 className="text-2xl lg:text-4xl font-semibold leading-snug text-white">
                 Customer Loyalty and Satisfaction With Our
-                <span className="text-[#01AA03]"> Best-in-Class Services.&apos;</span>
+                <span className="text-accent ml-2">
+                  Best-in-
+                  <br />
+                  Class Services.&apos;
+                </span>
               </h2>
             </div>
             <div className="w-full lg:w-1/2 max-w-lg">
-              <p className="text-[#eee;] text-base">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard dummy
-                text ever since the 1500s, when an unknown printer took a
-                galley.
+              <p className="text-[#eee;] text-base text-center">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy.
               </p>
             </div>
           </div>
@@ -107,19 +102,36 @@ const Features = () => {
             {featuresItem.map((features, idx) => (
               <AnimatePresence key={features.id}>
                 <motion.li
+                  initial={{
+                    scale: 1,
+                    background:
+                      idx === activeCard
+                        ? "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)"
+                        : "transparent",
+                  }}
                   whileHover={{
                     background:
-                      "linear-gradient(90deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)",
+                      "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)",
                     scale: 1.01,
                     transition: { duration: 0.3, ease: "linear" },
                   }}
-                  className={cn`rounded-xl w-full h-full p-6 bg-white shadow-lg`}
+                  animate={{
+                    background:
+                      idx === activeCard
+                        ? "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)"
+                        : "transparent",
+                  }}
+                  onMouseEnter={() => setActiveCard(idx)} // Set active card on hover
+                  //    onMouseLeave={() => setActiveCard(null)}
+                  className={cn(
+                    "rounded-xl w-full h-full p-6 border border-border shadow-lg"
+                  )}
                 >
                   <div className="mb-4 w-12 h-12">{features.itemIcon}</div>
-                  <h2 className="text-[#000] font-semibold text-lg mb-3">
+                  <h2 className="text-white font-semibold text-lg mb-3">
                     {features.label}
                   </h2>
-                  <p className="text-[#333] text-base font-normal mb-5">
+                  <p className="text-white text-base font-normal mb-5">
                     {features.info}
                   </p>
                 </motion.li>
