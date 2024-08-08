@@ -28,7 +28,8 @@ const Banner = () => {
           {/* Text Section */}
           <div className="flex flex-col items-center md:items-start w-full">
             <h1 className="text-center md:text-left text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight lg:leading-tight xl:leading-tight text-foreground">
-              Creating <br className="hidden md:block" /> Top Quality
+              Creating <br className="hidden md:block" /> Top Quality{" "}
+              <br className="md:hidden" />
               <br className="hidden md:block" />
               Digital
               <span className="text-accent mx-2 font-bold">Solutions</span>

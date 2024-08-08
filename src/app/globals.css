@@ -13,7 +13,7 @@
   --primary: 121, 99%, 34%; /* Deep Blue */
   --primary-foreground: 0 0% 100%; /* White */
   --secondary: 210 16% 48%; /* Cool Grey */
-  --secondary-foreground: 0 0% 100%; /* White */
+  --secondary-foreground: 0, 0%, 26%; /* White */
   --muted: 210 16% 90%; /* Light Grey */
   --muted-foreground: 210 10% 50%; /* Medium Grey */
   --accent: 121, 99%, 34%; /* Vibrant Pink */
@@ -42,7 +42,7 @@
   --card-foreground: 0 0% 95%; /* White */
   --popover: 210 30% 12%; /* Dark Grey */
   --popover-foreground: 0 0% 95%; /* White */
-  --primary: 39.29, 90%, 23.47% /* Deep Blue */
+  --primary: 39.29, 90%, 23.47%; /* Deep Blue */
   --primary-foreground: 0 0% 100%; /* White */
   --secondary: 210 20% 20%; /* Dark Grey */
   --secondary-foreground: 0 0% 95%; /* White */
@@ -80,7 +80,6 @@ body {
   width: 100%;
 }
 
-
 /* Color Usage Guide:
 
     --background: Background color of the main content.
@@ -112,4 +111,3 @@ body {
     --shadow: Color for shadows.
     --font-family: Font family for text.
 */
-
