@@ -16,7 +16,7 @@
   --secondary-foreground: 0 0% 100%; /* White */
   --muted: 210 16% 90%; /* Light Grey */
   --muted-foreground: 210 10% 50%; /* Medium Grey */
-  --accent: 129, 98%, 44%; /* Vibrant Pink */
+  --accent: 121, 99%, 34%; /* Vibrant Pink */
   --accent-foreground: 0 0% 100%; /* White */
   --destructive: 0 84% 60%; /* Red */
   --destructive-foreground: 0 0% 100%; /* White */
@@ -112,3 +112,4 @@ body {
     --shadow: Color for shadows.
     --font-family: Font family for text.
 */
+
