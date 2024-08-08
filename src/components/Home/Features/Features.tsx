@@ -84,14 +84,15 @@ const Features = () => {
                 <span className="text-accent ml-2">
                   Best-in-
                   <br />
-                  Class Services.&apos;
+                  Class Services&apos;
                 </span>
               </h2>
             </div>
             <div className="w-full lg:w-1/2 max-w-lg">
               <p className="text-[#eee;] text-base text-center">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry&apos;s standard
+                dummy.
               </p>
             </div>
           </div>
