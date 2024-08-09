@@ -75,21 +75,21 @@ const Features = () => {
       <div className="relative w-full py-16 z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
-            <div className="w-full lg:w-1/2 mb-3 lg:mb-4 text-center">
-              <h5 className="text-accent text-xs mb-1.5 font-semibold">
+            <div className="w-full lg:w-2/3 mb-3 lg:mb-4 text-center lg:text-left lg:px-2">
+              <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold">
                 WEB AND MOBILE APP DEVELOPMENT
               </h5>
-              <h2 className="text-2xl lg:text-4xl font-semibold leading-snug text-white">
-                Customer Loyalty and Satisfaction With Our
+              <h2 className="text-[1.4rem]  w-full lg:text-left md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug text-white">
+                Customer Loyalty and Satisfaction
+                <br className="hidden sm:block" />
+                With Our
                 <span className="text-accent ml-2">
-                  Best-in-
-                  <br />
-                  Class Services&apos;
+                  Best-in- Class Services.
                 </span>
               </h2>
             </div>
-            <div className="w-full lg:w-1/2 max-w-lg">
-              <p className="text-[#eee;] text-base text-center">
+            <div className="w-full lg:w-2/6 max-w-lg lg:max-w-sm">
+              <p className="text-white text-sm text-center lg:text-left">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry&apos;s standard
                 dummy.

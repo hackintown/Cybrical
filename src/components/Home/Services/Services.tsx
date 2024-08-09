@@ -72,13 +72,13 @@ const Services: React.FC = () => {
   return (
     <div className="w-full py-10">
       <div className="container">
-        <div className="text-center md:flex justify-between items-center mb-10">
-          <div className="">
+        <div className="text-center md:text-left md:flex justify-between items-center mb-10">
+          <div className="md:w-3/4">
             <h5 className="text-accent text-xs sm:text-base font-semibold my-1">
               OUR SERVICES
             </h5>
-            <h2 className="text-[1.4rem] sm:text-2xl text-center md:text-center font-bold leading-snug mb-1">
-              Perfect Blend of Intuitive Design
+            <h2 className="text-[1.4rem] sm1024text-2xl text-center md:text-left md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-snug mb-1">
+              Perfect Blend of Intuitive <br className="hidden sm:block"/> Design
               <span className="text-accent"> and latest Technology</span>
             </h2>
           </div>
