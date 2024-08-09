@@ -24,7 +24,7 @@ const CompanyInfo: React.FC = () => {
       </Link>
       <p className="mb-4 text-[#BFBFBF] text-center text-secondary-foreground">
         Lorem Ipsum is simply text of the printing and typesetting industry.
-        Ipsum has been the industry's standard dummy.
+        Ipsum has been the industry&apos;s standard dummy.
       </p>
       <div className="flex space-x-4">
         <div className="bg-black w-7 h-7 rounded-full flex items-center justify-center">

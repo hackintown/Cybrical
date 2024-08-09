@@ -48,8 +48,8 @@ const Footer: React.FC = () => {
               </span>
             </h2>
             <p className="text-white text-sm text-center lg:text-left mb-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
               ever since.
             </p>
           </div>
