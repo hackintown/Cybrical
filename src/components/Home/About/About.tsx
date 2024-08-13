@@ -45,7 +45,7 @@ const About: React.FC = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:hidden mb-4">
           {stats.map((item) => (
             <div
               key={item.id}

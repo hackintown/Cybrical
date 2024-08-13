@@ -78,7 +78,8 @@ const Services: React.FC = () => {
               OUR SERVICES
             </h5>
             <h2 className="text-[1.4rem] sm1024text-2xl text-center md:text-left md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-snug mb-1">
-              Perfect Blend of Intuitive <br className="hidden sm:block"/> Design
+              Perfect Blend of Intuitive <br className="hidden sm:block" />{" "}
+              Design
               <span className="text-accent"> and latest Technology</span>
             </h2>
           </div>

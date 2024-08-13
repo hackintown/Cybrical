@@ -47,17 +47,17 @@ const links = [
 
 const FooterLinks: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+    <div className="relative flex flex-wrap justify-center gap-12 md:gap-20">
       {links.map((linkGroup, index) => (
         <div key={index}>
-          <h4 className="text-xl text-white text-center font-bold mb-4">
+          <h4 className="text-xl text-white text-center md:text-left font-bold mb-4">
             {linkGroup.title}
           </h4>
           <ul className="space-y-2">
             {linkGroup.items.map((item, index) => (
               <li
                 key={index}
-                className="hover:text-green-400 text-[#BFBFBF] text-center cursor-pointer"
+                className="hover:text-green-400 text-[#BFBFBF] text-center md:text-left text-sm sm:text-sm cursor-pointer list-disc"
               >
                 {item}
               </li>
