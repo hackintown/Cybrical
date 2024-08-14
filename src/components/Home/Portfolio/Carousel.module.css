@@ -1,0 +1,21 @@
+.slide {
+    transform-style: preserve-3d; /* Enable 3D transformations for child elements */
+    transition: transform 0.5s ease-in-out; /* Smooth transitions for slide movements */
+  }
+  
+  .slide.slick-center {
+    /* Style for the center slide, making it appear raised */
+    transform: translateY(-50px) scale(1.1); /* Adjust these values to fine-tune the effect */
+  }
+  
+  .slide.slick-current.slick-center {
+    /* Add an extra effect for the actively selected slide */
+    transform: translateY(-70px) scale(1.2); /* Adjust values as needed */
+  }
+  
+  .slide.slick-active {
+    /* Style for active slides, reducing the size of slides to the left and right */
+    transform: scale(0.9); /* Adjust scaling for desired effect */
+  }
+  
+ 

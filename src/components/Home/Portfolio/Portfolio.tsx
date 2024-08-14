@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "./Carousel";
 
 const Portfolio = () => {
   const images = [
@@ -27,7 +28,7 @@ const Portfolio = () => {
         </div>
       </div>
       <div className="mt-10">
-
+        <Carousel />
       </div>
     </div>
   );
