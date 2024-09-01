@@ -2,8 +2,12 @@ import Image from "next/image";
 import React from "react";
 import Button from "../../../components/ui/Button";
 import { BackgroundRight, StarSvg } from "./icons";
+import { FlipWords } from "@/components/ui/flip-words";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 const Banner = () => {
+  const words = ["Solutions", "Services", "Projects", "Ideas", "Innovations"];
+
   return (
     <div className="relative w-full bg-gradient-to-b from-[#EAFFEA] to-[rgba(255, 255, 255, 0.00)] py-5 lg:py-10 h-full overflow-hidden">
       {/* Background Image */}
@@ -32,7 +36,9 @@ const Banner = () => {
               <br className="md:hidden" />
               <br className="hidden md:block" />
               Digital
-              <span className="text-accent mx-2 font-bold">Solutions</span>
+              {/* <span className="text-accent mx-2 font-bold">Solutions</span> */}
+              <FlipWords className="text-accent font-bold" words={words} />{" "}
+              <br />
             </h1>
             <Button className="my-5 font-base">Start a Project</Button>
           </div>
@@ -52,24 +58,14 @@ const Banner = () => {
       </div>
 
       {/* Rotated Section */}
-      <div className="bg-[#343434] transform rotate-[3deg] md:rotate-[1deg] py-2.5 md:py-3 -mt-7 -ml-2 -mr-2 sm:-mt-9 relative z-10">
+      <div className="bg-[#343434] transform rotate-[3deg] md:rotate-[1deg] py-2.5 md:py-3 -mt-7 -ml-2 -mr-2 sm:-mt-9 relative z-10 hidden sm:block">
         <div className="flex items-center justify-between gap-x-6 sm:gap-x-6 md:gap-x-8 px-2">
-          {[
-            "Design",
-            "Develop",
-            "Design",
-            "Discover",
-            "Design",
-            "Develop",
-            "Design",
-          ].map((text, index) => (
-            <div key={index} className="flex items-center">
-              <StarSvg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-              <p className="ml-2 text-xl sm:text-2xl text-white font-medium">
-                {text}
-              </p>
-            </div>
-          ))}
+          <InfiniteMovingCards
+            items={SliderData}
+            direction="left"
+            speed="fast"
+            pauseOnHover={false}
+          />
         </div>
       </div>
     </div>
@@ -77,3 +73,24 @@ const Banner = () => {
 };
 
 export default Banner;
+
+const SliderData = [
+  {
+    name: "App Development",
+  },
+  {
+    name: "Web Development",
+  },
+  {
+    name: "UI/UX Design",
+  },
+  {
+    name: "SEO & Digital Marketing",
+  },
+  {
+    name: "Performance Marketing",
+  },
+  {
+    name: "Social Media Marketing",
+  },
+];

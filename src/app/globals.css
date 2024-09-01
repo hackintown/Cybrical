@@ -111,3 +111,12 @@ body {
     --shadow: Color for shadows.
     --font-family: Font family for text.
 */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
