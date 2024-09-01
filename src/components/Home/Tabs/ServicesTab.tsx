@@ -15,7 +15,7 @@ const ServicesTab = () => {
         />
       </div>
       <div className="relative w-full pt-8 pb-12 z-10">
-        <div className="flex container flex-col lg:flex-row justify-between items-center mb-10">
+        <div className="flex container flex-col lg:flex-row justify-between items-center mb-10 lg:mb-14">
           <div className="w-full lg:w-2/3 mb-3 lg:mb-4 text-center lg:text-left lg:px-2">
             <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold">
               WEB AND MOBILE APP DEVELOPMENT
@@ -28,7 +28,7 @@ const ServicesTab = () => {
             </h2>
           </div>
           <div className="w-full lg:w-2/6 max-w-lg lg:max-w-sm">
-            <p className="text-black text-sm text-center lg:text-left">
+            <p className="text-tertiary-foreground text-sm text-center lg:text-left">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy
               text ever since the 1500s, when an unknown printer took a galley.

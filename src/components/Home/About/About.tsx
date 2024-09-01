@@ -28,7 +28,7 @@ const About: React.FC = () => {
               </span>
             </h2>
 
-            <p className="text-foreground text-sm text-center md:text-left my-3">
+            <p className="text-tertiary-foreground text-sm text-center md:text-left my-3 leading-[1.5]">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy
               text ever since the 1500s, when an unknown printer.

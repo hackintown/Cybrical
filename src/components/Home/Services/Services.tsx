@@ -26,7 +26,6 @@ const Services: React.FC = () => {
       label: "Web development",
       info: "Our team of highly trained professionals will help take your business to the web and help it reach online audiences effectively work with us to get all the insights and expertise.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
     {
       id: 2,
@@ -34,7 +33,6 @@ const Services: React.FC = () => {
       label: "Interface design",
       info: "Our mobile app development is done with creativity and precision, so your business can seamlessly transition from website to app Build your brand engagement.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
     {
       id: 3,
@@ -42,7 +40,6 @@ const Services: React.FC = () => {
       label: "Application development",
       info: "We develop highly adaptive and functional web applications using the latest tools and cutting edge technologies. Get in touch with us to discuss your requirements.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
     {
       id: 4,
@@ -50,7 +47,6 @@ const Services: React.FC = () => {
       label: "Mobile App development",
       info: "Our mobile app development is done with creativity and precision, so your business can seamlessly transition from website to app Build your brand engagement.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
     {
       id: 5,
@@ -58,7 +54,6 @@ const Services: React.FC = () => {
       label: "Web support and maintenance",
       info: "Are you dealing with security patches, legacy code, or broken links on the website? Let our experts keep your website up-to-date, secure and bug-free.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
     {
       id: 6,
@@ -66,7 +61,6 @@ const Services: React.FC = () => {
       label: "Digital marketing",
       info: "Digital marketing is no longer an option but a necessity. We provide the best digital marketing services with our expert knowledge on strategy, design, and development.",
       readMore: "Read more",
-      //   readMoreIcon: <ReadMoreIcon />,
     },
   ];
   return (

@@ -16,9 +16,7 @@ const Carousel: React.FC = () => {
     centerMode: true,
     centerPadding: "0",
     arrows: true,
-    // Custom CSS to create 3D effect
     cssEase: "ease-in-out",
-    // Adjust perspective value for the desired 3D effect
     perspective: "100px",
   };
 

@@ -1,188 +1,525 @@
 "use client";
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
 import Image from "next/image";
-import { useState } from "react";
 
-const TabContent: React.FC = () => {
-  const [openTab, setOpenTab] = useState<number>(1);
+interface TabPanelProps {
+  children?: React.ReactNode;
+
+  index: number;
+
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box p={3}>{children}</Box>}
+    </div>
+  );
+}
+
+interface A11yProps {
+  index: number;
+  id: string;
+  "aria-controls": string;
+}
+
+function a11yProps(index: number): A11yProps {
+  return {
+    index,
+    id: `scrollable-auto-tab-${index}`,
+    "aria-controls": `scrollable-auto-tabpanel-${index}`,
+  };
+}
+
+export default function ScrollableTabsButtonAuto() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
 
   return (
     <div className="container">
-      <div className="flex space-x-2  bg-white rounded-lg shadow-md max-w-4xl">
-        <button
-          onClick={() => setOpenTab(1)}
-          className={`flex-1 py-2 px-2 font-semibold  rounded-t-lg focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 1 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+      <Box sx={{ bgcolor: "background.paper" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
         >
-          Databases
-        </button>
-        <button
-          onClick={() => setOpenTab(2)}
-          className={`flex-1 py-2 px-2 font-semibold rounded-t-lg focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 2 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          <Tab
+            label="Databases"
+            {...a11yProps(0)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="Mobile"
+            {...a11yProps(1)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="Frontend"
+            {...a11yProps(2)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="Server"
+            {...a11yProps(3)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="Devops"
+            {...a11yProps(4)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="Backend"
+            {...a11yProps(5)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+          <Tab
+            label="CMS"
+            {...a11yProps(6)}
+            sx={{
+              "&.Mui-selected": {
+                backgroundColor: "#02E025",
+                color: "black",
+                borderRadius: "5px",
+              },
+            }}
+          />
+        </Tabs>
+        <div
+          style={{
+            backgroundImage: "url('/images/tab-box-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            padding: "28px",
+          }}
+          className="rounded-bl-xl rounded-br-xl rounded-tr-xl"
         >
-          Mobile
-        </button>
-        <button
-          onClick={() => setOpenTab(3)}
-          className={`flex-1 py-2 px-2 rounded-t-lg font-semibold focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 3 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          Frontend
-        </button>
-        <button
-          onClick={() => setOpenTab(3)}
-          className={`flex-1 py-2 px-2 rounded-t-lg font-semibold focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 4 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          Server
-        </button>
-        <button
-          onClick={() => setOpenTab(3)}
-          className={`flex-1 py-2 px-2 rounded-t-lg font-semibold focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 5 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          Devops
-        </button>
-        <button
-          onClick={() => setOpenTab(3)}
-          className={`flex-1 py-2 px-2 rounded-t-lg font-semibold focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 6 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          Backend
-        </button>
-        <button
-          onClick={() => setOpenTab(3)}
-          className={`flex-1 py-2 px-2 rounded-t-lg font-semibold focus:outline-none outline-none transition-all duration-300 ${
-            openTab === 7 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          CMS
-        </button>
-      </div>
-
-      <div
-        className="transition-all duration-300  py-12 px-20 rounded-lg rounded-tl-none shadow-md"
-        style={{ backgroundImage: "url('/images/tab-box-bg.png')" }}
-      >
-        {openTab === 1 && (
-          <div className="flex items-center justify-between px-2">
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
-                <Image
-                  src="/images/amazon-aurora.png"
-                  width={500}
-                  height={500}
-                  className="w-full"
-                  alt="aws-image"
-                />
+          <TabPanel value={value} index={0}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
-                <Image
-                  src="/images/aws.png"
-                  width={500}
-                  height={500}
-                  className="w-1/2"
-                  alt="aws-image"
-                />
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
               </div>
-              <p className="text-white">AWS RDS</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
-                <Image
-                  src="/images/mongodb.png"
-                  width={500}
-                  height={500}
-                  className="w-[20px]"
-                  alt="aws-image"
-                />
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
               </div>
-              <p className="text-white">Mongodb</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
-                <Image
-                  src="/images/mysql.png"
-                  width={500}
-                  height={500}
-                  className="w-full"
-                  alt="aws-image"
-                />
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
               </div>
-              <p className="text-white">MYSQL</p>
             </div>
-          </div>
-        )}
-
-        {openTab === 2 && (
-          <div className="flex items-center justify-between px-2">
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
             </div>
-          </div>
-        )}
-
-        {openTab === 3 && (
-          <div className="flex items-center justify-between px-2">
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
-            </div>
-            <div className="flex flex-col space-y-2 items-center justify-center">
-              <div className="text-white rounded-full border border-border w-[80px] h-[80px] flex items-center justify-center">
-                A
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
               </div>
-              <p className="text-white">Amazon Aurora</p>
             </div>
-          </div>
-        )}
-      </div>
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel value={value} index={5}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel value={value} index={6}>
+            <div className="flex items-center justify-between px-2">
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/amazon-aurora.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="Amazon Aurora"
+                    priority
+                  />
+                </div>
+                <p className="text-white">Amazon Aurora</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/aws.png"
+                    width={72}
+                    height={72}
+                    className="w-1/2"
+                    alt="AWS RDS"
+                  />
+                </div>
+                <p className="text-white">AWS RDS</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mongodb.png"
+                    width={72}
+                    height={72}
+                    className="w-[20px]"
+                    alt="MongoDB"
+                  />
+                </div>
+                <p className="text-white">MongoDB</p>
+              </div>
+              <div className="flex flex-col space-y-2 items-center justify-center">
+                <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
+                  <Image
+                    src="/images/mysql.png"
+                    width={72}
+                    height={72}
+                    className="w-full"
+                    alt="MySQL"
+                  />
+                </div>
+                <p className="text-white">MySQL</p>
+              </div>
+            </div>
+          </TabPanel>
+        </div>
+      </Box>
     </div>
   );
-};
-
-export default TabContent;
+}
