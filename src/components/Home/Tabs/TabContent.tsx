@@ -52,7 +52,7 @@ export default function ScrollableTabsButtonAuto() {
 
   return (
     <div className="container">
-      <Box sx={{ bgcolor: "background.paper" }}>
+      <Box>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -75,6 +75,8 @@ export default function ScrollableTabsButtonAuto() {
             label="Mobile"
             {...a11yProps(1)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",
@@ -86,6 +88,8 @@ export default function ScrollableTabsButtonAuto() {
             label="Frontend"
             {...a11yProps(2)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",
@@ -97,6 +101,8 @@ export default function ScrollableTabsButtonAuto() {
             label="Server"
             {...a11yProps(3)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",
@@ -108,6 +114,8 @@ export default function ScrollableTabsButtonAuto() {
             label="Devops"
             {...a11yProps(4)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",
@@ -119,6 +127,8 @@ export default function ScrollableTabsButtonAuto() {
             label="Backend"
             {...a11yProps(5)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",
@@ -130,6 +140,8 @@ export default function ScrollableTabsButtonAuto() {
             label="CMS"
             {...a11yProps(6)}
             sx={{
+              backgroundColor: "#fff",
+              margin: "0 5px",
               "&.Mui-selected": {
                 backgroundColor: "#02E025",
                 color: "black",

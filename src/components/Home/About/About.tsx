@@ -3,10 +3,30 @@ import Image from "next/image";
 import React from "react";
 
 const stats = [
-  { id: 1, icon: "💼", stat: "10+", label: "Years in Business" },
-  { id: 2, icon: "📦", stat: "200+", label: "Projects Delivered" },
-  { id: 3, icon: "😊", stat: "200+", label: "Happy Clients" },
-  { id: 4, icon: "👥", stat: "200+", label: "Team Of Experts" },
+  {
+    id: 1,
+    icon: "/images/icon-business.webp",
+    stat: "10+",
+    label: "Years in Business",
+  },
+  {
+    id: 2,
+    icon: "/images/icon-delivered.webp",
+    stat: "200+",
+    label: "Projects Delivered",
+  },
+  {
+    id: 3,
+    icon: "/images/icon-client.webp",
+    stat: "200+",
+    label: "Happy Clients",
+  },
+  {
+    id: 4,
+    icon: "/images/icon-team.webp",
+    stat: "200+",
+    label: "Team Of Experts",
+  },
 ];
 const About: React.FC = () => {
   return (
@@ -54,7 +74,13 @@ const About: React.FC = () => {
               <div className="max-w-[200px] w-full mx-auto flex items-center ">
                 <div className="bg-[#66F3AF] rounded-full">
                   <div className="flex items-center justify-center text-xl w-10 h-10">
-                    {item.icon}
+                    <Image
+                      src={item.icon}
+                      width={40}
+                      height={40}
+                      alt="icon"
+                      className="object-cover w-6 h-auto"
+                    />
                   </div>
                 </div>
 
@@ -75,7 +101,13 @@ const About: React.FC = () => {
             <div key={item.id} className="w-full flex items-center ">
               <div className="bg-[#66F3AF] rounded-full">
                 <div className="flex items-center justify-center text-xl w-10 h-10">
-                  {item.icon}
+                  <Image
+                    src={item.icon}
+                    width={40}
+                    height={40}
+                    alt="icon"
+                    className="object-cover w-6 h-auto"
+                  />
                 </div>
               </div>
 

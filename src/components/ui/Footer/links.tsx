@@ -57,7 +57,8 @@ const FooterLinks: React.FC = () => {
             {linkGroup.items.map((item, index) => (
               <li
                 key={index}
-                className="hover:text-green-400 text-[#BFBFBF] text-center md:text-left text-sm sm:text-sm cursor-pointer list-disc"
+                className="hover:text-green-400 text-[#BFBFBF] text-center md:text-left text-sm sm:text-sm
+                 cursor-pointer lg:list-disc"
               >
                 {item}
               </li>
