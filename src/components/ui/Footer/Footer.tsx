@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
       <div className="absolute -top-2 w-full h-16">
         <Image
           src="/images/footer-greenish-layer.webp"
-          layout="fill" // Use layout fill for responsiveness
-          objectFit="cover" // Ensure the image covers the background
-          className="z-10 w-full h-full rotate-1"
+          width={500}
+          height={500} // Ensure the image covers the background
+          className="z-10 w-full h-full rotate-1 object-cover"
           alt="footer-greenish-layer"
           quality={100} // Set quality to prevent blurring
           priority // Prioritize loading the background image
@@ -32,10 +32,9 @@ const Footer: React.FC = () => {
         <Image
           src="/images/footer-bg.png"
           alt="Footer Inner Background"
-          layout="fill" // Use layout fill for responsiveness
-          objectFit="cover" // Ensure the image covers the background
-          className="z-10 w-full h-full"
-          quality={100} // Set quality to prevent blurring
+          width={500}
+          height={500} // Ensure the image covers the background
+          className="z-10 w-full h-full object-cover"
           priority // Prioritize loading the background image
         />
       </div>

@@ -8,9 +8,9 @@ const ServicesTab = () => {
       <div>
         <Image
           src="/images/services-tab-bg.png"
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full"
+          width={500}
+          height={500}
+          className="w-full h-full object-cover"
           alt="services-tab-bg"
         />
       </div>
