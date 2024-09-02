@@ -5,15 +5,6 @@ import Image from "next/image";
 const ServicesTab = () => {
   return (
     <div className="relative py-8">
-      <div>
-        <Image
-          src="/images/services-tab-bg.png"
-          width={500}
-          height={500}
-          className="w-full h-full object-cover"
-          alt="services-tab-bg"
-        />
-      </div>
       <div className="relative w-full pt-8 pb-12 z-10">
         <div className="flex container flex-col lg:flex-row justify-between items-center mb-10 lg:mb-14">
           <div className="w-full lg:w-2/3 mb-3 lg:mb-4 text-center lg:text-left lg:px-2">

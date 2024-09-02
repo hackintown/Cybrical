@@ -160,7 +160,7 @@ export default function ScrollableTabsButtonAuto() {
           className="rounded-bl-xl rounded-br-xl rounded-tr-xl"
         >
           <TabPanel value={value} index={0}>
-            <div className="flex items-center justify-between px-2">
+            <div className="flex flex-col sm:flex-row gap-y-8 lg:gap-y-0 items-center justify-between px-2">
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
                   <Image

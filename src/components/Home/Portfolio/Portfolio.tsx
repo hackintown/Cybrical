@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel";
+import Image from "next/image";
 
 const Portfolio = () => {
   const images = [
@@ -8,27 +9,40 @@ const Portfolio = () => {
     { id: 3, src: "/images/portfolio-slide3.png", alt: "Project 3" },
   ];
   return (
-    <div className="container pt-10">
-      <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
-        <div className="w-full lg:w-2/3 mb-3 lg:mb-4 text-center lg:text-left lg:px-2">
-          <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold">
+    <div className="relative">
+      <div
+        className="absolute top-0 left-0 w-full h-full"
+        style={{
+          backgroundImage: `url('/images/services-tab-bg.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+        }}
+      />
+      <div className="container pt-10 relative">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-6xl font-bold text-green-100 relative">
+            OUR PORTFOLIO
+            <span className="absolute inset-0 text-opacity-10 text-green-200">
+              OUR PORTFOLIO
+            </span>
+          </h2>
+          <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold -mt-5 relative">
             OUR PORTFOLIO
           </h5>
-          <h2 className="text-[1.4rem]  w-full lg:text-left md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug text-black">
-            The Best Project That We
-            <br className="hidden sm:block" />
-            <span className="text-accent ml-2">Have Delivered</span>
-          </h2>
-        </div>
-        <div className="w-full lg:w-2/6 max-w-lg lg:max-w-sm">
-          <p className="text-black text-sm text-center lg:text-left">
+          <h3 className="text-2xl font-semibold mt-2">
+            The Best Projects That We
+            <br />
+            <span className="text-accent">Have Delivered</span>
+          </h3>
+          <p className="text-tertiary-foreground mt-2 lg:max-w-[590px] lg:mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;s standard dummy.
+            industry. Lorem Ipsum has been the industry&apos;s standard.
           </p>
         </div>
-      </div>
-      <div className="mt-10">
-        <Carousel />
+
+        <div className="mt-10">
+          <Carousel />
+        </div>
       </div>
     </div>
   );

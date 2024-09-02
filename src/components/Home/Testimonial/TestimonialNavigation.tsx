@@ -5,11 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const images = [
-  "/images/logo.png",
-  "/images/logo.png",
-  "/images/logo.png",
-  "/images/logo.png",
-  "/images/logo.png",
+  "/images/client1.webp",
+  "/images/client2.webp",
+  "/images/client3.webp",
+  "/images/client4.webp",
+  "/images/client5.webp",
 ];
 
 const TestimonialNavigation: React.FC = () => {
@@ -23,6 +23,29 @@ const TestimonialNavigation: React.FC = () => {
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -30,7 +53,7 @@ const TestimonialNavigation: React.FC = () => {
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="p-2">
-            <div className="flex justify-center items-center bg-white rounded-lg shadow-md">
+            <div className="flex justify-center items-center bg-white rounded-lg shadow-sm h-[125px]">
               <img
                 src={src}
                 alt={`logo-${index}`}

@@ -27,7 +27,6 @@ const Carousel: React.FC = () => {
           <Image
             src="/images/portfolio-slide3.png"
             alt="Project 1"
-            layout="responsive"
             width={800}
             height={600}
             className="rounded-lg shadow-lg"
@@ -37,7 +36,6 @@ const Carousel: React.FC = () => {
           <Image
             src="/images/portfolio-slide1.png"
             alt="Project 2"
-            layout="responsive"
             width={800}
             height={600}
             className="rounded-lg shadow-lg"
@@ -47,7 +45,6 @@ const Carousel: React.FC = () => {
           <Image
             src="/images/portfolio-slide2.png"
             alt="Project 3"
-            layout="responsive"
             width={800}
             height={600}
             className="rounded-lg shadow-lg p-0 m-0"

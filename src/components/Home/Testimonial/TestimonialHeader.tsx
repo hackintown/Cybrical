@@ -12,12 +12,12 @@ const TestimonialHeader = () => {
       <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold -mt-5 relative">
         TESTIMONIAL
       </h5>
-      <h3 className="text-2xl font-semibold mt-4">
+      <h3 className="text-2xl font-semibold mt-2">
         Clients love our <span className="text-green-600">services</span>
       </h3>
-      <p className="text-gray-600 mt-2">
+      <p className="text-tertiary-foreground mt-2 lg:max-w-[590px] lg:mx-auto">
         Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        industry. Lorem Ipsum has been the industry&apos;s standard.
       </p>
     </div>
   );

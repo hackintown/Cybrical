@@ -6,21 +6,23 @@ import Image from "next/image";
 
 const Testimonials = () => {
   return (
-    <div className="py-16 px-4 lg:px-24 container overflow-visible">
-      {/* <Image
-        src="/images/testimonial-bg-layer.webp"
-        width={500}
-        height={500}
-        className="w-full h-full object-cover"
-        alt="testimonial-bg-layer absolute top-1/2"
-      /> */}
+    <div className="relative">
+      <div
+        className="absolute top-0 left-0 w-full h-full"
+        style={{
+          backgroundImage: `url('/images/testimonial-bg-layer.webp')`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+        }}
+      />
+      <div className="container relative overflow-visible">
+        <TestimonialHeader />
 
-      <TestimonialHeader />
+        <TestimonialCard />
 
-      <TestimonialCard />
-
-      <div className="mt-20">
-        <TestimonialNavigation />
+        <div className="my-20">
+          <TestimonialNavigation />
+        </div>
       </div>
     </div>
   );
