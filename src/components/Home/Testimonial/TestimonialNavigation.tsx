@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 const images = [
   "/images/client1.webp",
@@ -54,9 +55,11 @@ const TestimonialNavigation: React.FC = () => {
         {images.map((src, index) => (
           <div key={index} className="p-2">
             <div className="flex justify-center items-center bg-white rounded-lg shadow-sm h-[125px]">
-              <img
+              <Image
                 src={src}
                 alt={`logo-${index}`}
+                width={111}
+                height={111}
                 className="w-full h-full object-contain p-4"
               />
             </div>

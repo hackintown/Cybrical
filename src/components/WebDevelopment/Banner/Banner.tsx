@@ -32,14 +32,18 @@ const Banner = () => {
           {/* Text Section */}
           <div className="flex flex-col items-center md:items-start w-full">
             <h1 className="text-center md:text-left text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight lg:leading-tight xl:leading-tight text-foreground">
-              Creating <br className="hidden md:block" /> Top Quality{" "}
+              Your complete <br className="hidden md:block" /> web development
               <br className="md:hidden" />
-              <br className="hidden md:block" />
-              Digital
               {/* <span className="text-accent mx-2 font-bold">Solutions</span> */}
               <FlipWords className="text-accent font-bold" words={words} />{" "}
               <br />
             </h1>
+            <p className="text-tertiary-foreground text-xs text-center sm:text-sm my-2 md:text-left">
+              Our team of highly trained professionals will help take your
+              business to the web and help it reach online audiences
+              effectively. Work with us to get all the insights and expertise
+              you need to engage online audiences.
+            </p>
             <Button className="my-5 font-base">Start a Project</Button>
           </div>
 
@@ -56,41 +60,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
-
-      {/* Rotated Section */}
-      <div className="bg-[#343434] transform rotate-[3deg] md:rotate-[1deg] py-2.5 md:py-3 -mt-7 -ml-2 -mr-2 sm:-mt-9 relative z-10 hidden sm:block">
-        <div className="flex items-center justify-between gap-x-6 sm:gap-x-6 md:gap-x-8 px-2">
-          <InfiniteMovingCards
-            items={SliderData}
-            direction="left"
-            speed="fast"
-            pauseOnHover={false}
-          />
-        </div>
-      </div>
     </div>
   );
 };
 
 export default Banner;
-
-const SliderData = [
-  {
-    name: "App Development",
-  },
-  {
-    name: "Web Development",
-  },
-  {
-    name: "UI/UX Design",
-  },
-  {
-    name: "SEO & Digital Marketing",
-  },
-  {
-    name: "Performance Marketing",
-  },
-  {
-    name: "Social Media Marketing",
-  },
-];

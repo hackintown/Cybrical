@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { StarSvg } from "../Home/Banner/icons";
+import { StarSvg } from "../ui/BannerIcon/Icons";
 
 export const InfiniteMovingCards = ({
   items,
