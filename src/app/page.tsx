@@ -4,7 +4,7 @@ import Features from "@/components/Home/Features/Features";
 import About from "@/components/Home/About/About";
 import Portfolio from "@/components/Home/Portfolio/Portfolio";
 import ServicesTab from "@/components/Home/Tabs/ServicesTab";
-import Testimonials from "@/components/Home/Testimonial/Testimonials";
+import Testimonials from "@/components/ui/Testimonial/Testimonials";
 export default function Home() {
   return (
     <main>

@@ -33,9 +33,12 @@ const InfoDataCounter = (props: Props) => {
   return (
     <>
       <div className="bg-[#13182C] shadow-lg py-6">
-        <div className="container flex px-2 py-3">
+        <div className="container grid grid-cols-2 sm:grid-cols-4 gap-4 px-2 py-3">
           {stats.map((item) => (
-            <div key={item.id} className="w-full flex items-center ">
+            <div
+              key={item.id}
+              className="w-full flex flex-col md:flex-row gap-3 items-center "
+            >
               <div className="bg-[#66F3AF] rounded-full">
                 <div className="flex items-center justify-center text-xl w-10 h-10">
                   <Image
@@ -48,11 +51,13 @@ const InfoDataCounter = (props: Props) => {
                 </div>
               </div>
 
-              <div className="mx-3">
+              <div className="mx-3 flex flex-col items-center md:items-start">
                 <h3 className="mb-1 text-2xl font-semibold text-white">
                   {item.stat}
                 </h3>
-                <p className="text-sm text-gray-400">{item.label}</p>
+                <p className="text-sm text-gray-400 text-center md:text-left">
+                  {item.label}
+                </p>
               </div>
             </div>
           ))}

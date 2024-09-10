@@ -20,8 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white border-b-gray-200 shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* logo */}
-        <div>
+        <Link href="/">
           <Image
             src="/images/logo.png"
             height={100}
@@ -29,7 +28,7 @@ const Navbar: React.FC = () => {
             alt="Logo"
             className="h-8 mr-3"
           />
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden lg:block">
@@ -38,7 +37,7 @@ const Navbar: React.FC = () => {
               zIndex: 1000,
             }}
           >
-            <NavigationMenuList >
+            <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="flex flex-row">
@@ -58,7 +57,7 @@ const Navbar: React.FC = () => {
                     </NavigationMenuLink>
                   </div>
                   <ul className="grid w-[400px] gap-2 p-1 md:w-[500px] md:grid-cols-3 lg:w-[600px] xl:w-[700px]">
-                    <ListItem href="/docs" title="Web Development">
+                    <ListItem href="/web-development" title="Web Development">
                       With impeccable precision through our web development
                       services; marked by technical supremacy to create a robust
                       two-way handshake.

@@ -57,7 +57,7 @@ const Services = () => {
     },
   ];
   return (
-    <div className="container px-4">
+    <div className="container px-4 pb-4 lg:pb-8">
       <ServicesCard servicesItem={servicesItem} ReadMoreSvg={ReadMoreSVg} />
     </div>
   );
