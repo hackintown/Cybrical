@@ -4,7 +4,7 @@
 
 :root {
   /* Light Mode Colors */
-  --background: 210 16% 98%; /* Light Grey */
+  --background: 0%, 0%, 100%; /* Light Grey */
   --foreground: 120, 100%, 4%; /* Dark Grey */
   --card: 0, 0%, 98%; /* White */
   --card-foreground: 210 10% 23%; /* Dark Grey */
