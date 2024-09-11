@@ -8,6 +8,8 @@ import React from "react";
 import TestimonialHeader from "@/components/ui/Testimonial/TestimonialHeader";
 import TestimonialCard from "@/components/ui/Testimonial/TestimonialCard";
 import CmoTechStack from "@/components/WebDevelopment/CmoTechStack";
+import Leader from "@/components/WebDevelopment/Leader/Leader";
+import OurProcess from "@/components/ui/OurProcess/OurProcess";
 
 type Props = {};
 
@@ -35,6 +37,8 @@ const page = (props: Props) => {
           </div>
         </div>
         <CmoTechStack />
+        <Leader />
+        <OurProcess />
       </main>
     </>
   );

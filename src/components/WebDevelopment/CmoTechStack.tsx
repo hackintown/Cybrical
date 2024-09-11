@@ -21,35 +21,27 @@ const services = [
 
 type TechStackButtonProps = {
   name: string;
-  color: string;
-  isActive: boolean;
-  onClick: () => void;
 };
 
-const TechStackButton = ({
-  name,
-  color,
-  isActive,
-  onClick,
-}: TechStackButtonProps) => (
+const TechStackButton = ({ name }: TechStackButtonProps) => (
   <motion.button
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className={`${color} px-4 py-3 rounded-r-full text-sm font-medium mb-2 w-full md:w-auto text-left ${
-      isActive ? "ring-1 ring-white" : ""
-    }`}
-    onClick={onClick}
+    className={`px-4 py-3 bg-[#01AA03]
+       text-white rounded-r-full text-sm font-medium mb-2 w-full  hover:bg-black
+       md:w-auto text-left
+    `}
   >
     {name}
   </motion.button>
 );
 
 const ContentSection = () => (
-  <div className="mt-2 mb-6 lg:mt-0 lg:mb-8 flex flex-col md:items-start max-w-full md:max-w-[400px] w-full px-4">
-    <h3 className="text-xl font-bold mb-4 text-white text-left w-full">
+  <div className="mt-2 mb-6 lg:mt-0 lg:mb-8 flex flex-col md:items-start max-w-full md:max-w-[400px] lg:max-w-full w-full px-4 lg:pr-12">
+    <h3 className="text-xl font-bold mb-4 md:mb-2 text-white text-left w-full">
       Content Management System
     </h3>
-    <p className="text-xs text-white sm:text-sm font-light mb-4 leading-normal md:text-left">
+    <p className="text-xs text-white sm:text-sm font-light mb-4 md:text-xs lg:text-sm leading-normal md:leading-relaxed md:text-left">
       Customers identify your products and services based on the promotional
       information you relay through your web apps. This is where a content
       management system is crucial. Your content must be focused and presented
@@ -68,7 +60,7 @@ const ContentSection = () => (
 );
 
 const IllustrationSection = () => (
-  <div className="relative w-full max-w-[288px] max-h-[221px] mx-3">
+  <div className="relative w-full max-w-[288px] max-h-[221px] md:max-w-[250px] mx-3">
     <motion.img
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -81,11 +73,8 @@ const IllustrationSection = () => (
 );
 
 const CmoTechStack = () => {
-  const [activeService, setActiveService] = useState(
-    "Content Management System"
-  );
   return (
-    <div className="container px-4">
+    <div className="container px-4 pt-4 pb-10">
       <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
         <div className="w-full lg:w-2/3 mb-3 lg:mb-4 text-center lg:text-left lg:px-2">
           <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold">
@@ -110,19 +99,16 @@ const CmoTechStack = () => {
           </p>
         </div>
       </div>
-      <div className="bg-gradient-to-tr from-[#EFEFEF]/83 to-[#FFFFFF] rounded-xl overflow-hidden">
-        <div className="flex flex-col space-y-2 bg-gradient-to-tr from-[#EFEFEF]/83 to-[#FFFFFF] shadow-md md:shadow-xl p-8">
+      <div className="grid gap-8 lg:gap-16 md:grid-cols-[40%,54%] bg-gradient-to-tr from-[#EFEFEF] to-[#FFFFFF]  rounded-xl overflow-hidden p-6">
+        <div className="flex flex-col gap-2">
           {services.map((service) => (
-            <TechStackButton
-              key={service.name}
-              name={service.name}
-              color={service.color}
-              isActive={activeService === service.name}
-              onClick={() => setActiveService(service.name)}
-            />
+            <TechStackButton key={service.name} name={service.name} />
           ))}
         </div>
-        <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-[50%,40%] lg:grid-cols-[50%,25%] bg-gradient-to-tr from-[#0EA301] to-[#03AF14] via-[#03AF14]/83 rounded-lg justify-center lg:justify-start g0ap-x-1 md:gap-x-5 pt-8 items-center lg:items-start">
+        <div
+          className="grid grid-rows-2 md:grid-rows-1 bg-gradient-to-tr from-[#0EA301] to-[#03AF14] via-[#03AF14]/83 
+        rounded-lg justify-center md:justify-start gap-x-1 md:gap-y-5  pt-8 items-center md:items-start px-4"
+        >
           <IllustrationSection />
           <ContentSection />
         </div>

@@ -16,30 +16,19 @@ const services = [
 // Service type definition
 type Service = {
   name: string;
-  color: string;
 };
 
 // Props for TechStackButton
 type TechStackButtonProps = {
   name: string;
-  color: string;
-  isActive: boolean;
-  onClick: () => void;
 };
 
-const TechStackButton = ({
-  name,
-  color,
-  isActive,
-  onClick,
-}: TechStackButtonProps) => (
+const TechStackButton = ({ name }: TechStackButtonProps) => (
   <motion.button
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className={`${color} px-4 py-3 rounded-r-full text-sm font-medium mb-2 w-full md:w-auto text-left ${
-      isActive ? "ring-1 ring-white" : ""
-    }`}
-    onClick={onClick}
+    className={` px-4 py-3 rounded-r-full bg-white text-[#01AA03] hover:bg-black
+       hover:text-white lg:text-base font-medium mb-2 w-full md:w-auto text-left`}
   >
     {name}
   </motion.button>
@@ -72,7 +61,6 @@ const ContentSection = () => (
 const IllustrationSection = () => (
   <div className="relative w-full max-w-[350px] max-h-[280px] lg:max-w-[286px] lg:max-h-[263px] mx-auto">
     <motion.img
-      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       src="/images/tech-stack-right.webp"
@@ -83,8 +71,6 @@ const IllustrationSection = () => (
 );
 
 export default function TechStack() {
-  const [activeService, setActiveService] = useState("Frontend Development");
-
   return (
     <div className="bg-[#13182C] text-white flex flex-col justify-center py-10 lg:py-16 relative">
       <Image
@@ -123,13 +109,7 @@ export default function TechStack() {
           <div className="grid lg:grid-cols-[40%,70%] lg:gap-x-5">
             <div className="flex flex-col space-y-2 bg-gradient-to-tr from-[#03AF14]/83 to-[#03AF14] shadow-md md:shadow-xl p-8">
               {services.map((service) => (
-                <TechStackButton
-                  key={service.name}
-                  name={service.name}
-                  color={service.color}
-                  isActive={activeService === service.name}
-                  onClick={() => setActiveService(service.name)}
-                />
+                <TechStackButton key={service.name} name={service.name} />
               ))}
             </div>
             <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-[50%,40%] lg:grid-cols-[50%,25%] justify-center lg:justify-start g0ap-x-1 md:gap-x-5 pt-8 items-center lg:items-start">
