@@ -6,13 +6,29 @@ type Props = {};
 
 const OurProcess = (props: Props) => {
   return (
-    <div className="">
+    <div className="pb-12">
       <div className="container px-4">
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="flex flex-col justify-center items-center mb-10">
+          <h2 className="text-4xl lg:text-6xl font-bold text-green-100 relative">
+            OUR PROCESS
+            <span className="absolute inset-0 text-opacity-10 text-green-200">
+              OUR PROCESS
+            </span>
+          </h2>
+          <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold -mt-5 relative">
+            Process
+          </h5>
+          <h3 className="text-2xl font-semibold mt-2 text-center">
+            We have worked with startups as well&nbsp;
+            <br />
+            <span className="text-green-600">as established companies</span>
+          </h3>
+        </div>
+        <div className="flex flex-wrap lg:flex-nowrap justify-center items-center">
           {ProcessData.map((item, index) => (
-            <div key={index} className="relative group mb-8 md:mb-0 mx-4">
+            <div key={index} className="relative md:mb-0">
               <div
-                className="w-64 h-64 bg-green-50 flex items-center justify-center"
+                className={`max-w-[236px] w-full h-[272px] ${item.gradient} flex items-center justify-center border border-dashed`}
                 style={{ clipPath: item.shape }}
               >
                 <div className="flex flex-col items-center justify-center p-6">
@@ -33,9 +49,6 @@ const OurProcess = (props: Props) => {
                   </p>
                 </div>
               </div>
-              {index < ProcessData.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-8 w-16 h-0.5 bg-green-200 transform -translate-y-1/2"></div>
-              )}
             </div>
           ))}
         </div>

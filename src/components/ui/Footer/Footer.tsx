@@ -32,8 +32,7 @@ const Footer: React.FC = () => {
         <Image
           src="/images/footer-bg.png"
           alt="Footer Inner Background"
-          width={500}
-          height={500} // Ensure the image covers the background
+          fill
           className="z-10 w-full h-full object-cover"
           priority // Prioritize loading the background image
         />

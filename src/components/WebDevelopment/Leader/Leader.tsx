@@ -5,7 +5,7 @@ type Props = {};
 
 const Leader = (props: Props) => {
   return (
-    <div className="relative pt-10 pb-10 lg:pb-20">
+    <div className="relative pt-10 pb-10">
       <div className="absolute inset-0 top-0 z-0 w-full h-full">
         <Image
           src="/images/leader-layer-bg.webp"
@@ -54,8 +54,10 @@ const Leader = (props: Props) => {
               </div>
             ))}
         </div>
-        <div className="after:content-[''] after:block after:w-full after:h-[2px]
-          after:mt-20 bg-gradient-to-r from-[#FEFEFE] via-[rgba(0,0,0,0.2)] to-[#FEFEFE]/"></div>
+        <div
+          className="after:content-[''] after:block after:w-full after:h-[2px]
+          after:mt-20 bg-gradient-to-r from-[#FEFEFE] via-[rgba(0,0,0,0.2)] to-[#FEFEFE]/"
+        ></div>
       </div>
     </div>
   );
