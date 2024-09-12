@@ -6,7 +6,7 @@ type Props = {};
 
 const OurProcess = (props: Props) => {
   return (
-    <div className="pb-12">
+    <div className="pb-12 lg:pb-20 xl:pb-24">
       <div className="container px-4">
         <div className="flex flex-col justify-center items-center mb-10">
           <h2 className="text-4xl lg:text-6xl font-bold text-green-100 relative">
@@ -20,7 +20,7 @@ const OurProcess = (props: Props) => {
           </h5>
           <h3 className="text-2xl font-semibold mt-2 text-center">
             We have worked with startups as well&nbsp;
-            <br />
+            <br className="hidden md:block" />
             <span className="text-green-600">as established companies</span>
           </h3>
         </div>
@@ -31,7 +31,7 @@ const OurProcess = (props: Props) => {
                 className={`max-w-[236px] w-full h-[272px] ${item.gradient} flex items-center justify-center border border-dashed`}
                 style={{ clipPath: item.shape }}
               >
-                <div className="flex flex-col items-center justify-center p-6">
+                <div className="flex flex-col space-y-2 items-center justify-center p-6">
                   <div className="">
                     <Image
                       src={item.icon}
@@ -41,10 +41,10 @@ const OurProcess = (props: Props) => {
                       className="w-7 h-7"
                     />
                   </div>
-                  <h3 className="font-semibold text-base mb-2 text-center">
+                  <h3 className="font-semibold text-base mb-0 text-center">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-center text-gray-600 leading-tight">
+                  <p className="text-xs xl:text-sm text-center text-gray-600 leading-tight">
                     {item.description}
                   </p>
                 </div>
