@@ -24,6 +24,7 @@ const OurApproach: React.FC<OurApproachProps> = ({ content }) => {
             src={content.imageSrc}
             alt="Our Approach"
             fill
+            quality={100}
             className="object-cover"
           />
         </div>
@@ -37,7 +38,7 @@ const OurApproach: React.FC<OurApproachProps> = ({ content }) => {
             {content.title}
           </span>
         </h2>
-        <h5 className="text-accent text-xs sm:text-sm mb-1.5 font-semibold -mt-5 relative">
+        <h5 className="text-accent text-xs sm:text-sm mb-1.5 font-semibold -mt-5 relative uppercase">
           {content.subtitle}
         </h5>
         <h3 className="text-lg sm:text-2xl md:text-[1.8rem] font-semibold mt-2 !leading-snug">

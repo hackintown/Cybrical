@@ -13,7 +13,7 @@ const Banner = () => {
       {/* Background Image */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full opacity-85">
         <Image
-          src="banner-bg-layer.svg"
+          src="/images/banner-bg-layer.svg"
           alt="banner-layer"
           height={500}
           width={500}

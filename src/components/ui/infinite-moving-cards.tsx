@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { StarSvg } from "../ui/BannerIcon/Icons";

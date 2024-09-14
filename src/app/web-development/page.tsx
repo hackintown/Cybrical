@@ -1,8 +1,7 @@
 import Testimonials from "@/components/ui/Testimonial/Testimonials";
 import InfoDataCounter from "@/components/ui/InfoDataCounter";
-import TechStack from "@/components/ui/TechStack";
+import WebTechStack from "@/components/WebDevelopment/TechStack/WebTechStack";
 import Banner from "@/components/WebDevelopment/Banner/Banner";
-import OurApproach from "@/components/ui/OurApproach/OurApproach";
 import Services from "@/components/WebDevelopment/Services/Services";
 import React from "react";
 import TestimonialHeader from "@/components/ui/Testimonial/TestimonialHeader";
@@ -11,6 +10,7 @@ import CmoTechStack from "@/components/WebDevelopment/CmoTechStack";
 import Leader from "@/components/WebDevelopment/Leader/Leader";
 import OurProcess from "@/components/ui/OurProcess/OurProcess";
 import { contentMap } from "@/components/ui/OurApproach/OurApproachData";
+import OurApproach from "@/components/ui/OurApproach/OurApproach";
 
 type Props = {};
 
@@ -24,7 +24,7 @@ const page = (props: Props) => {
         <InfoDataCounter />
         <OurApproach content={content} />
         <Services />
-        <TechStack />
+        <WebTechStack />
         <div className="relative py-6 lg:py-10 lg:pb-16">
           <div
             className="absolute top-0 left-0 w-full h-full"

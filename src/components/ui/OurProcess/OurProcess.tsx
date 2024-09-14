@@ -6,7 +6,7 @@ type Props = {};
 
 const OurProcess = (props: Props) => {
   return (
-    <div className="pb-12 lg:pb-20 xl:pb-24">
+    <div className="py-12 lg:pb-20 xl:pb-24">
       <div className="container px-4">
         <div className="flex flex-col justify-center items-center mb-10">
           <h2 className="text-4xl lg:text-6xl font-bold text-green-100 relative">
