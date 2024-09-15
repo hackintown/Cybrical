@@ -12,6 +12,7 @@ interface ProcessSectionProps {
   imageSrc: string;
   processList: List[];
   imageAlt: string;
+  paragraph: string;
 }
 
 export default function ProcessSection({
@@ -21,6 +22,7 @@ export default function ProcessSection({
   imageSrc,
   imageAlt,
   accentHead,
+  paragraph,
 }: ProcessSectionProps) {
   return (
     <section className="relative px-4 py-16  md:px-6 lg:px-8">
@@ -34,13 +36,18 @@ export default function ProcessSection({
           className="w-full h-auto"
         />
       </div>
-      <div className="container relative mx-auto grid gap-8 md:grid-cols-2 md:gap-12 lg:gap-16 z-10">
+      <div className="container relative mx-auto grid gap-8 lg:grid-cols-[60%,35%] md:gap-12 lg:gap-16 z-10">
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl leading-tight">
+          <h2
+            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            style={{ lineHeight: "1.25" }}
+          >
             {title}
-            <br />
-            <span className="text-[#01AA03] block">{accentHead}</span>
+            <span className="text-[#01AA03]"> {accentHead}</span>
           </h2>
+          {paragraph && (
+            <p className="text-sm font-light text-black">{paragraph}</p>
+          )}
 
           <ul className="space-y-2">
             {processList.map((step, index) => (
@@ -54,8 +61,8 @@ export default function ProcessSection({
                 />
                 <div>
                   <h3 className="font-semibold">
-                    {step.title}-
-                    <span className="text-tertiary text-sm mx-1 font-light">
+                    {step.title && step.title}
+                    <span className="text-tertiary-foreground text-sm mx-1 font-light">
                       {step.description}
                     </span>
                   </h3>
@@ -67,7 +74,7 @@ export default function ProcessSection({
             {buttonText}
           </Button>
         </div>
-        <div className="relative h-[400px]">
+        <div className="relative h-[400px] lg:h-auto">
           <Image
             src={imageSrc}
             alt={imageAlt}

@@ -20,6 +20,7 @@ const ProcessSec = memo(function ProcessSec() {
           accentHead={data.accentHead || ""}
           processList={data.processList || []}
           buttonText="REQUEST A QUOTE"
+          paragraph=""
           imageSrc="/images/mbl-dev-process-image.webp"
           imageAlt="Mobile app development process illustration"
         />

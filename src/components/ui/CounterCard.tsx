@@ -25,7 +25,7 @@ const CounterCard = ({ imgSrc, count, title }: Props) => {
           <h2 className="text-white text-2xl font-semibold text-center lg:text-left">
             {count}
           </h2>
-          <p className="text-[#D7D7D7] uppercase text-sm md:text-base text-center lg:text-left">
+          <p className="text-[#D7D7D7] uppercase text-sm text-center lg:text-left">
             {title}
           </p>
         </div>

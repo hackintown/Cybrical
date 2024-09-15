@@ -31,10 +31,10 @@ const Banner = () => {
         <div className="md:grid md:grid-cols-[55%,40%] items-center justify-between">
           {/* Text Section */}
           <div className="flex flex-col items-center md:items-start w-full">
-            <h1 className="text-center md:text-left text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight lg:leading-tight xl:leading-tight text-foreground">
-              Take your Digital <br className="hidden md:block" /> Marketing
+            <h1 className="text-center md:text-left text-3xl sm:text-4xl lg:text-5xl  font-bold leading-tight lg:leading-tight xl:leading-tight text-foreground">
+              Stay at the top of website <br className="hidden md:block" />
               <br className="md:hidden" />
-              <span className="text-accent"> efforts to new heights.</span>
+              <span className="text-accent">Support and Maintenance</span>
             </h1>
             <p className="text-tertiary-foreground text-xs sm:text-sm lg:text-base mt-4 mb-4 w-full mx-auto max-w-[740px]">
               Digital marketing is no longer an option but a necessity. We
@@ -42,14 +42,14 @@ const Banner = () => {
               knowledge on strategy, design, and development for the most
               effective digital marketing plan for you.
             </p>
-            <Button className="my-5 font-base">Start a Project</Button>
+            <Button className="my-5  text-base">Start a Project</Button>
           </div>
 
           {/* Banner Image */}
           <div className="mt-6 md:mt-0 flex justify-center md:justify-end w-full">
             <Image
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-full"
-              src="/images/digital-banner-right.webp"
+              src="/images/wb-banner-image.webp"
               alt="banner-img"
               loading="lazy"
               width={500}

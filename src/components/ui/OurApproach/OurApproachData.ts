@@ -76,4 +76,37 @@ export const contentMap: { [key: string]: ContentType } = {
       "With AvyaTech, you can be sure that your business marketing efforts are in good hands. We have a stellar record of delivering outcomes exceeding expectations. We aim to serve as a cost-effective partner, providing you with the highest returns on your marketing investments.",
     imageSrc: "/images/digital-approach-img.webp",
   },
+  "/website-maintenance": {
+    title: "OUR APPROACH",
+    subtitle: "OUR APPROACH",
+    heading: "Keep your website protected and Updated with Our ",
+    accentHeading: "Website Support and Maintenance Services",
+    paragraphs:
+      "We have the most experienced team of developers and managers for website maintenance services.",
+    additionalInfo:
+      "We know that keeping your business IT resources up to date, safe and flawless is crucial for business growth. You can focus on the core business activities and let our team handle the full website support and maintenance challenges in the most efficient manner.",
+    imageSrc: "/images/wm-approach.webp",
+  },
+  "/quality-assurance": {
+    title: "OUR APPROACH",
+    subtitle: "OUR APPROACH",
+    heading: "Quality Assurance is a key element of",
+    accentHeading: "every successful software development strategy",
+    paragraphs:
+      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master builder of human happiness.",
+    additionalInfo:
+      "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances.",
+    imageSrc: "/images/qa-approach.webp",
+  },
+  "/careers": {
+    title: "OUR APPROACH",
+    subtitle: "OUR APPROACH",
+    heading: "About",
+    accentHeading: "Cybrical",
+    paragraphs:
+      "AvyaTech is a web development company that provides career opportunities in iOS app development jobs, Android app development jobs, digital marketing jobs, and many more. Our web development professionals are highly skilled, experienced and possess the knowledge to create an attractive website with the best features.",
+    additionalInfo:
+      "We hire people who have excellent punctuality, professionalism, and eagerness to learn and excel every day. Whether you are searching for WordPress developer jobs Magento developer jobs, or Laravel developer jobs, Avyatech has suitable career options for you.As a leading web development company, we aim to deliver website Support and maintenance services also by following the best practices. Our team leaves no stone unturned and goes that extra mile to bring perfection in everything we do.",
+    imageSrc: "/images/career-approach.webp",
+  },
 };
