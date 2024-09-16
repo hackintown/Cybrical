@@ -6,7 +6,7 @@ export const ApproachCardData = [
       "We have a reliable and professional team to take care of our website maintenance services and updates. Whether you are seeking Magento maintenance, Laravel maintenance",
   },
   {
-    iconSrc: "/images/wb-approach-icon2.webp",
+    iconSrc: "/images/wb-approach-icon3.webp",
     title: "Tailored services",
     paragraphs:
       "We believe that every company’s budget and requirements for website maintenance services are different. Whether you are looking for affordable WordPress support plans, Laravel",

@@ -30,7 +30,7 @@ export const contentMap: { [key: string]: ContentType } = {
       "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.",
     additionalInfo:
       "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
-    imageSrc: "/images/our-approach.webp",
+    imageSrc: "/images/agile-approach.webp",
   },
   "/cloud-devops": {
     title: "OUR APPROACH",
@@ -41,7 +41,7 @@ export const contentMap: { [key: string]: ContentType } = {
       "Consistent collaboration, automation, continuous integration, testing, delivery, and monitoring with DevOps. Software development and deployment are complex processes, and product engineering teams must work more closely with business users. Moreover, the software product should flawlessly meet both technical and user needs with better communication and improved efficiency.",
     additionalInfo:
       "DevOps simplifies the complexity as it applies to the entire software delivery process. DevOps service providers help business organizations drive business success by achieving their vision and accelerating the SLDC. It is great for managing the IT infrastructure and integrating the build, test, and deployment process.",
-    imageSrc: "/images/our-approach.webp",
+    imageSrc: "/images/cloud-approach.webp",
   },
   "/app-development": {
     title: "OUR APPROACH",
@@ -52,7 +52,7 @@ export const contentMap: { [key: string]: ContentType } = {
       "AvyaTech is a leader in providing full-stack web application development services that include custom web app development, migration, update, & ongoing maintenance services. Our team of developers has experience delivering cutting-edge, customized web app development services for your unique business needs. We have successfully designed a range of secured and scalable apps for several industry verticals like startups, product companies, agencies, and eCommerce.",
     additionalInfo:
       "We develop B2B and B2C web applications using cutting-edge technology and tools to meet business challenges. We develop CMS web applications for you that are complex yet easy to use and manageable.",
-    imageSrc: "/images/our-approach.webp",
+    imageSrc: "/images/app-dev-approach.webp",
   },
   "/mbl-app-development": {
     title: "OUR APPROACH",

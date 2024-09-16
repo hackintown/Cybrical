@@ -1,13 +1,15 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import Button from "../../../components/ui/Button";
 import { BackgroundRight, StarSvg } from "../../ui/BannerIcon/Icons";
 import { FlipWords } from "@/components/ui/flip-words";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { useRouter } from "next/navigation";
 
 const Banner = () => {
   const words = ["Solutions", "Services", "Projects", "Ideas", "Innovations"];
-
+ const router = useRouter();
   return (
     <div className="relative w-full bg-gradient-to-b from-[#EAFFEA] to-[rgba(255, 255, 255, 0.00)] py-5 lg:py-10 h-full overflow-hidden">
       {/* Background Image */}
@@ -40,7 +42,7 @@ const Banner = () => {
               <FlipWords className="text-accent font-bold" words={words} />{" "}
               <br />
             </h1>
-            <Button className="my-5 font-base">Start a Project</Button>
+            <Button onClick={() => router.push('/contact-us')} className="my-5 font-base">Start a Project</Button>
           </div>
 
           {/* Banner Image */}
