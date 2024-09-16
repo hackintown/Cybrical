@@ -13,7 +13,7 @@ const Banner = () => {
           alt="banner-layer"
           height={500}
           width={500}
-          loading="lazy"
+          priority
           className="w-full h-auto"
         />
       </div>

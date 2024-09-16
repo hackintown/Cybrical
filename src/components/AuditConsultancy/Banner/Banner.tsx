@@ -17,7 +17,7 @@ const Banner = () => {
           alt="banner-layer"
           height={500}
           width={500}
-          loading="lazy"
+          priority
           className="w-full h-auto"
         />
       </div>
@@ -50,7 +50,7 @@ const Banner = () => {
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-full"
               src="/images/wb-banner-image.webp"
               alt="banner-img"
-              loading="lazy"
+              priority
               width={500}
               height={500}
             />

@@ -39,7 +39,7 @@ const Leader = (props: Props) => {
             LeaderData.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white max-w-[45%] sm:max-w-[30%] lg:max-w-[22%] xl:max-w-[18%] w-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_-2px_3px_-1px_rgba(0,0,0,0.1)] rounded-lg flex flex-col items-center justify-center gap-y-2 px-4 py-10"
+                className="bg-white max-w-[45%] sm:max-w-[30%] lg:max-w-[22%] xl:max-w-[18%] w-full shadow-custom-light rounded-lg flex flex-col items-center justify-center gap-y-2 px-4 py-10"
               >
                 <Image
                   src={item.icon}

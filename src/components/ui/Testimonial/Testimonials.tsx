@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Testimonials = () => {
   return (
-    <div className="relative">
+    <div className="relative py-8">
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{

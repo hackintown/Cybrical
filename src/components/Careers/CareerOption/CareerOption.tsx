@@ -30,7 +30,7 @@ const CareerOption = memo(function CareerOption() {
           alt="banner-layer"
           height={500}
           width={500}
-          loading="lazy"
+          priority
           className="w-full h-auto"
         />
       </div>
@@ -58,11 +58,8 @@ const CareerOption = memo(function CareerOption() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {CareerOptionData.map((data: ProcessData, index: number) => (
-            <div
-              key={index}
-              className="rounded-lg shadow-sm bg-white border border-[#434343] border-opacity-10"
-            >
               <ListingCard
+              key={index}
                 headTitle={data.title} // Use the actual data instead of hardcoded values
                 accentHead={data.accentHead || ""}
                 paragraph={data.paragraph || ""}
@@ -71,7 +68,7 @@ const CareerOption = memo(function CareerOption() {
                 imageAlt="icons"
                 btn=""
               />
-            </div>
+           
           ))}
         </div>
       </div>

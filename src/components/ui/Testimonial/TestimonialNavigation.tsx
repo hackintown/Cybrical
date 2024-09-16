@@ -54,7 +54,7 @@ const TestimonialNavigation: React.FC = () => {
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="p-2">
-            <div className="flex justify-center items-center bg-white rounded-lg shadow-sm h-[125px]">
+            <div className="flex justify-center items-center shadow-md bg-white rounded-lg h-[125px]">
               <Image
                 src={src}
                 alt={`logo-${index}`}

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   WebSvg,
   AppDevSVg,
@@ -20,6 +21,7 @@ interface ServicesItem {
 }
 
 const Services: React.FC = () => {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const servicesItem: ServicesItem[] = [
     {
       id: 1,
@@ -64,6 +66,13 @@ const Services: React.FC = () => {
       readMore: "Read more",
     },
   ];
+
+  const toggleReadMore = (id: number) => {
+    setExpandedItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
   return (
     <div className="w-full py-10">
       <div className="container">
@@ -73,7 +82,7 @@ const Services: React.FC = () => {
               OUR SERVICES
             </h5>
             <h2 className="text-[1.4rem] sm1024text-2xl text-center md:text-left md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-snug mb-1">
-              Perfect Blend of Intuitive <br className="hidden sm:block" />{" "}
+              Perfect Blend of Intuitive <br className="hidden sm:block" />
               Design
               <span className="text-accent"> and latest Technology</span>
             </h2>
@@ -85,7 +94,12 @@ const Services: React.FC = () => {
             <Button className="mt-6 font-base ">Browse All Services</Button>
           </div>
         </div>
-        <ServicesCard servicesItem={servicesItem} ReadMoreSvg={ReadMoreSVg} />
+        <ServicesCard
+          servicesItem={servicesItem}
+          ReadMoreSvg={ReadMoreSVg}
+          expandedItems={expandedItems}
+          toggleReadMore={toggleReadMore}
+        />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card = memo(function Card({ iconSrc, title, paragraphs }: CardProps) {
   return (
-    <div className="bg-white border border-[#263238] border-opacity-10 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+    <div className="bg-white shadow-custom-light p-6 rounded-lg transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div className="mb-4 relative">
         <Image
           src={iconSrc}

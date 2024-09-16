@@ -24,7 +24,7 @@ const ContactForm = () => {
               height="300"
               style={{ border: 0 }}
               allowFullScreen
-              loading="lazy"
+              priority
             />
           </div> */}
             <Image
@@ -194,7 +194,7 @@ const ContactForm = () => {
           alt="banner-layer"
           height={500}
           width={500}
-          loading="lazy"
+          priority
           className="w-full h-auto"
         />
       </div>

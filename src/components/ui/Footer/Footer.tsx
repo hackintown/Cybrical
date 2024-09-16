@@ -12,10 +12,11 @@ import FooterLinks from "./links";
 import OfficeAddress from "./OfficeAddress";
 import Button from "../Button";
 import Image from "next/image";
+import ContactPopup from "./ContactPopup";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative pt-10">
+    <footer className="relative pt-10 md:pt-16">
       {/* Mobile View*/}
       <div className="absolute w-full h-full md:hidden top-0">
         <Image
@@ -64,16 +65,16 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-wrap justify-center items-center gap-12 border-t border-[#154E47]">
           <CompanyInfo />
-          <div className="relative pl-10 pt-6 lg:border-l lg:border-[#154E47]">
+          <div className="relative lg:pl-10 pt-6 lg:border-l lg:border-[#154E47]">
             <FooterLinks />
             <OfficeAddress />
-            <div className="absolute left-0 right-0 bottom-40 w-full h-px bg-white after:content-[''] after:absolute after:w-full after:h-px after:bg-[#154E47]"></div>
+            <div className="absolute left-0 right-0 bottom-36 lg:bottom-40 w-full h-px bg-white after:content-[''] after:absolute after:w-full after:h-px after:bg-[#154E47]"></div>
           </div>
         </div>
       </div>
 
       <div className="container relative z-10">
-        <div className="border-t  border-[#154E47] md:py-5 mx-auto flex flex-col md:flex-row justify-between items-center text-base text-[#CFCFCF]">
+        <div className="border-t  border-[#154E47] md:py-5 py-5 mx-auto flex flex-col md:flex-row justify-between items-center text-base text-[#CFCFCF]">
           <p className="mb-4 md:mb-0">© 2024 Cybrical. All rights reserved.</p>
           <div className="flex space-x-3">
             <a
@@ -90,6 +91,10 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
+      </div>
+      {/* Position ContactPopup */}
+      <div className="absolute bottom-40 xl:bottom-20 right-10 hidden lg:block">
+        <ContactPopup />
       </div>
     </footer>
   );

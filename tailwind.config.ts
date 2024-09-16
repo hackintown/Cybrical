@@ -100,6 +100,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-card": "linear-gradient(180deg, #0EA301 0%, #003C06 83%)",
       },
+      boxShadow: {
+        "custom-light": "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],

@@ -61,7 +61,7 @@ const TestimonialCard: React.FC = () => {
   const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <div className="bg-white mt-52 lg:mt-6 w-full lg:w-[88%] ml-auto rounded-2xl shadow-lg p-8 flex flex-col lg:flex-row items-center lg:items-start">
+    <div className="bg-white mt-52 lg:mt-6 w-full lg:w-[88%] ml-auto rounded-2xl shadow-custom-light p-8 flex flex-col lg:flex-row items-center lg:items-start">
       <div className="relative -mt-44 lg:mt-0 lg:-ml-40 xl:-ml-44 mb-8 w-[80%] sm:w-[70%] md:w-[60%] lg:mb-0 lg:w-[50%] lg:pr-10">
         <div className="max-w-[358p] w-full h-[250px] sm:h-[338px]">
           <Image

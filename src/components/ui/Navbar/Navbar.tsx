@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
                           Custom software development services
                         </div>
                         <Button className="h-10 rounded-lg">
-                          All Services
+                          Start a Project
                         </Button>
                       </a>
                     </NavigationMenuLink>
@@ -63,54 +63,68 @@ const Navbar: React.FC = () => {
                       two-way handshake.
                     </ListItem>
                     <ListItem
-                      href="/docs/installation"
+                      href="/agile-development"
+                      title="Agile Development"
+                    >
+                      We are a leading web application development company that
+                      offers a fully functional…
+                    </ListItem>
+                    <ListItem href="/cloud-devops" title="Cloud & DevOps">
+                      Transform how you use technology to achieve your business
+                      objectives…
+                    </ListItem>
+                    <ListItem
+                      href="/app-development"
                       title="Application Development"
                     >
                       We are a leading web application development company that
                       offers a fully functional…
                     </ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
-                      title="Technology Audit And Consultancy"
+                      href="/mbl-app-development"
+                      title="Mobile App Development"
                     >
                       Transform how you use technology to achieve your business
                       objectives…
                     </ListItem>
-                    <ListItem href="/docs" title="Web Development">
+                    <ListItem
+                      href="/digital-marketing"
+                      title="Digital Marketing"
+                    >
                       With impeccable precision through our web development
                       services; marked by technical supremacy to create a robust
                       two-way handshake.
                     </ListItem>
                     <ListItem
-                      href="/docs/installation"
-                      title="Application Development"
+                      href="/website-maintenance"
+                      title="Website Suport & Maintenance"
                     >
                       We are a leading web application development company that
                       offers a fully functional…
                     </ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      href="/audit-consultancy"
                       title="Technology Audit And Consultancy"
                     >
                       Transform how you use technology to achieve your business
                       objectives…
                     </ListItem>
-                    <ListItem href="/docs" title="Web Development">
-                      With impeccable precision through our web development
-                      services; marked by technical supremacy to create a robust
-                      two-way handshake.
-                    </ListItem>
                     <ListItem
-                      href="/docs/installation"
-                      title="Application Development"
+                      href="/quality-assurance"
+                      title="Quality Assurance"
                     >
-                      We are a leading web application development company that
-                      offers a fully functional…
+                      Transform how you use technology to achieve your business
+                      objectives…
                     </ListItem>
-                    <ListItem
-                      href="/docs/primitives/typography"
-                      title="Technology Audit And Consultancy"
-                    >
+                    <ListItem href="/about-us" title="About Us">
+                      Transform how you use technology to achieve your business
+                      objectives…
+                    </ListItem>
+                    <ListItem href="/careers" title="Careers">
+                      Transform how you use technology to achieve your business
+                      objectives…
+                    </ListItem>
+                    <ListItem href="/hire-developer" title="Hire Developer">
                       Transform how you use technology to achieve your business
                       objectives…
                     </ListItem>
@@ -134,14 +148,14 @@ const Navbar: React.FC = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/our-work" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Work
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Compony</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Company</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {NavigationItems.map((component) => (
@@ -157,7 +171,7 @@ const Navbar: React.FC = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/hire-developers" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Hire Developer
                   </NavigationMenuLink>

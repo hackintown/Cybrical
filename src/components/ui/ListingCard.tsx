@@ -27,7 +27,7 @@ const ListingCard = ({
   btn,
 }: ListingCardProps) => {
   return (
-    <div className=" p-9 rounded-lg border-opacity-10">
+    <div className=" p-9 rounded-lg shadow-custom-light transition-transform transform hover:scale-105 hover:shadow-xl duration-300 bg-white">
       <div className="flex flex-col gap-4">
         {imgSrc && (
           <div className="">

@@ -20,7 +20,7 @@ interface FeaturesItem {
 }
 
 const Features = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const featuresItem: FeaturesItem[] = [
     {
       id: 1,
@@ -100,43 +100,27 @@ const Features = () => {
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {featuresItem.map((features, idx) => (
-              <AnimatePresence key={features.id}>
-                <motion.li
-                  initial={{
-                    scale: 1,
-                    background:
-                      idx === activeCard
-                        ? "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)"
-                        : "transparent",
-                  }}
-                  whileHover={{
-                    background:
-                      "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)",
-                    scale: 1.01,
-                    transition: { duration: 0.3, ease: "linear" },
-                  }}
-                  animate={{
-                    background:
-                      idx === activeCard
-                        ? "linear-gradient(-180deg, #0EA301 0%, rgba(0, 60, 6, 0.83) 100%)"
-                        : "transparent",
-                  }}
-                  onMouseEnter={() => setActiveCard(idx)} // Set active card on hover
-                  //    onMouseLeave={() => setActiveCard(null)}
-                  className={cn(
-                    "rounded-xl w-full h-full p-6 border border-border shadow-lg"
-                  )}
-                >
-                  <div className="mb-4 w-12 h-12">{features.itemIcon}</div>
-                  <h2 className="text-white font-semibold text-lg mb-3">
-                    {features.label}
-                  </h2>
-                  <p className="text-white text-base font-normal mb-5">
-                    {features.info}
-                  </p>
-                </motion.li>
-              </AnimatePresence>
+            {featuresItem.map((feature, idx) => (
+              <motion.li
+                key={feature.id}
+                className={cn(
+                  "rounded-xl w-full h-full p-6 border border-border shadow-lg transition-all duration-300",
+                  hoveredCard === idx
+                    ? "bg-gradient-to-b from-[#0EA301] to-[rgba(0,60,6,0.83)]"
+                    : "bg-transparent"
+                )}
+                onMouseEnter={() => setHoveredCard(idx)}
+                onMouseLeave={() => setHoveredCard(null)}
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <div className="mb-4 w-12 h-12">{feature.itemIcon}</div>
+                <h3 className="text-white font-semibold text-lg mb-3">
+                  {feature.label}
+                </h3>
+                <p className="text-gray-300 text-sm">{feature.info}</p>
+              </motion.li>
             ))}
           </motion.ul>
         </div>

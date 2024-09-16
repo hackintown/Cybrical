@@ -1,5 +1,6 @@
+"use client"
 import ServicesCard from "@/components/ui/ServicesCard";
-import React from "react";
+import React, { useState } from "react";
 import {
   WebSvg,
   AppDevSVg,
@@ -19,6 +20,7 @@ interface ServicesItem {
 }
 
 const Services = () => {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const servicesItem: ServicesItem[] = [
     {
       id: 1,
@@ -56,9 +58,20 @@ const Services = () => {
       readMore: "Read more",
     },
   ];
+
+  const toggleReadMore = (id: number) => {
+    setExpandedItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
   return (
     <div className="container px-4 pb-4 lg:pb-8">
-      <ServicesCard servicesItem={servicesItem} ReadMoreSvg={ReadMoreSVg} />
+           <ServicesCard
+          servicesItem={servicesItem}
+          ReadMoreSvg={ReadMoreSVg}
+          expandedItems={expandedItems}
+          toggleReadMore={toggleReadMore}
+        />
     </div>
   );
 };
