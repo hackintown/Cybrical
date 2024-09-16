@@ -1,5 +1,4 @@
 "use client";
-import ProcessSection from "@/components/ui/ProcessSection";
 import { memo } from "react";
 import { ExpertsHandData } from "./ExpertsHandData";
 import ListingCard from "@/components/ui/ListingCard";
@@ -19,6 +18,7 @@ interface ProcessData {
   imgSrc: string;
   listing: List[];
   btn: string;
+  bgColor?: string;
 }
 
 const ExpertsHand = memo(function ExpertsHand() {
@@ -69,6 +69,7 @@ const ExpertsHand = memo(function ExpertsHand() {
                 listing={data.listing || []} // Correct the default value
                 imageAlt="icons"
                 btn=""
+                bgColor="#DFFEE0"
               />
             </div>
           ))}

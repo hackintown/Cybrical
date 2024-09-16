@@ -96,7 +96,7 @@ const TestimonialCard: React.FC = () => {
           {currentTestimonial.title}
         </p>
         {/* Arrow Controls */}
-        <div className="absolute bottom-0 -right-5 sm:right-0 flex space-x-2 p-4">
+        <div className="absolute bottom-0 lg:-bottom-32 -right-5 sm:right-0 flex space-x-2 p-4">
           {/* Left Arrow */}
           <button
             onClick={prevSlide}

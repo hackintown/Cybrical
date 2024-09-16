@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../Button";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -14,19 +15,32 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { NavigationItems } from "./constant";
+import { ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null); // For tracking active submenus
+
+  const toggleMenu = (menu: string) => {
+    if (activeMenu === menu) {
+      setActiveMenu(null); // Close the menu if already open
+    } else {
+      setActiveMenu(menu); // Open the selected menu
+    }
+  };
+  const handleCloseSidebar = () => {
+    setIsOpen(false); // Close sidebar when a link is clicked
+  };
   return (
-    <nav className="bg-white border-b-gray-200 shadow-md">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="bg-white border-b-gray-200 shadow-md relative">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/">
           <Image
             src="/images/logo.png"
             height={100}
-            width={100}
+            width={120}
             alt="Logo"
-            className="h-8 mr-3"
+            className="h-9 mr-3"
           />
         </Link>
 
@@ -39,11 +53,13 @@ const Navbar: React.FC = () => {
           >
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-base">
+                  Services
+                </NavigationMenuTrigger>
                 <NavigationMenuContent className="flex flex-row">
                   <div className="w-min">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full select-none flex-col justify-start rounded-md rounded-r-none border-r border-r-gray-200 p-6 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
@@ -53,7 +69,7 @@ const Navbar: React.FC = () => {
                         <Button className="h-10 rounded-lg">
                           Start a Project
                         </Button>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </div>
                   <ul className="grid w-[400px] gap-2 p-1 md:w-[500px] md:grid-cols-3 lg:w-[600px] xl:w-[700px]">
@@ -124,7 +140,7 @@ const Navbar: React.FC = () => {
                       Transform how you use technology to achieve your business
                       objectives…
                     </ListItem>
-                    <ListItem href="/hire-developer" title="Hire Developer">
+                    <ListItem href="/hire-developers" title="Hire Developer">
                       Transform how you use technology to achieve your business
                       objectives…
                     </ListItem>
@@ -132,7 +148,9 @@ const Navbar: React.FC = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Technologies</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-base">
+                  Technologies
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {NavigationItems.map((component) => (
@@ -149,13 +167,21 @@ const Navbar: React.FC = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/our-work" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base",
+                      "hover:text-black"
+                    )}
+                  >
                     Work
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-base">
+                  Company
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {NavigationItems.map((component) => (
@@ -172,34 +198,19 @@ const Navbar: React.FC = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/hire-developers" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base",
+                      "hover:text-black"
+                    )}
+                  >
                     Hire Developer
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          {/* <Link href="/services" className="text-gray-600 hover:text-green-500">
-            Services
-          </Link>
-          <Link
-            href="/technologies"
-            className="text-gray-600 hover:text-green-500"
-          >
-            Technologies
-          </Link>
-          <Link href="/work" className="text-gray-600 hover:text-green-500">
-            Work
-          </Link>
-          <Link href="/company" className="text-gray-600 hover:text-green-500">
-            Company
-          </Link>
-          <Link
-            href="/hire-developer"
-            className="text-gray-600 hover:text-green-500"
-          >
-            Hire Developer
-          </Link> */}
         </div>
 
         {/* Desktop Button */}
@@ -225,7 +236,7 @@ const Navbar: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
+                  d="M4 6h16M4 12h16M4 18h16"
                 ></path>
               </svg>
             ) : (
@@ -247,43 +258,119 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
-      {isOpen && (
-        <div className="lg:hidden">
-          <Link
-            href="/services"
-            className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 bg-white z-50 flex flex-col px-4 py-6"
           >
-            Services
-          </Link>
-          <Link
-            href="/technologies"
-            className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-          >
-            Technologies
-          </Link>
-          <Link
-            href="/work"
-            className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-          >
-            Work
-          </Link>
-          <Link
-            href="/company"
-            className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-          >
-            Company
-          </Link>
-          <Link
-            href="/hire-developer"
-            className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-          >
-            Hire Developer
-          </Link>
-          <div className="px-4 py-2">
-            <Button>Start a Project</Button>
-          </div>
-        </div>
-      )}
+            {/* Close Button */}
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-lg font-bold">Menu</span>
+              <button onClick={() => setIsOpen(false)}>
+                <XIcon className="w-6 h-6 text-green-600" />
+              </button>
+            </div>
+
+            {/* Services Menu */}
+            <div>
+              <button
+                className="w-full flex items-center justify-between text-left text-foreground py-2"
+                onClick={() => toggleMenu("services")}
+              >
+                <span>Services</span>
+                <motion.div
+                  animate={{
+                    rotate: activeMenu === "services" ? 180 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDownIcon className="h-6 w-6 text-green-600" />
+                </motion.div>
+              </button>
+              {activeMenu === "services" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="pl-4"
+                >
+                  <Link href="/web-development" onClick={handleCloseSidebar} className="block py-2">
+                    Web Development
+                  </Link>
+                  <Link href="/agile-development" onClick={handleCloseSidebar} className="block py-2">
+                    Agile Development
+                  </Link>
+                  <Link href="/cloud-devops" onClick={handleCloseSidebar} className="block py-2">
+                    Cloud & DevOps
+                  </Link>
+                  <Link href="/app-development" onClick={handleCloseSidebar} className="block py-2">
+                    Application Development
+                  </Link>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Technologies Menu */}
+            <div>
+              <button
+                className="w-full flex items-center justify-between text-left text-foreground py-2"
+                onClick={() => toggleMenu("technologies")}
+              >
+                <span>Technologies</span>
+                <motion.div
+                  animate={{
+                    rotate: activeMenu === "technologies" ? 180 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDownIcon className="h-6 w-6 text-green-600" />
+                </motion.div>
+              </button>
+              {activeMenu === "technologies" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="pl-4"
+                >
+                  {NavigationItems.map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="block py-2"
+                      onClick={handleCloseSidebar}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
+            {/* Static Links */}
+            <Link href="/work" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+              Work
+            </Link>
+            <Link href="/company" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+              Company
+            </Link>
+            <Link href="/hire-developer" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+              Hire Developer
+            </Link>
+
+            {/* Mobile Button */}
+            <div className="mt-4">
+              <Button>Start a Project</Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
@@ -297,8 +384,9 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          href="href"
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-primary",
             className
@@ -309,7 +397,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-3 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );

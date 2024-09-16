@@ -15,6 +15,7 @@ interface ListingCardProps {
   imageAlt: string;
   paragraph: string;
   btn: string;
+  bgColor?: string;
 }
 
 const ListingCard = ({
@@ -25,9 +26,13 @@ const ListingCard = ({
   paragraph,
   listing,
   btn,
+  bgColor = "white",
 }: ListingCardProps) => {
   return (
-    <div className=" p-9 rounded-lg shadow-custom-light transition-transform transform hover:scale-105 hover:shadow-xl duration-300 bg-white">
+    <div
+      style={{ backgroundColor: bgColor }}
+      className="p-9 rounded-lg shadow-custom-light transition-transform transform hover:scale-105 hover:shadow-xl duration-300"
+    >
       <div className="flex flex-col gap-4">
         {imgSrc && (
           <div className="">

@@ -66,7 +66,7 @@ const CareerOption = memo(function CareerOption() {
                 imgSrc={data.imgSrc || ""}
                 listing={data.listing || []} // Correct the default value
                 imageAlt="icons"
-                btn=""
+                btn="Apply Now"
               />
            
           ))}
