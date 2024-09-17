@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { BackgroundRight, StarSvg } from "../../ui/BannerIcon/Icons";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -36,7 +37,9 @@ const Banner = () => {
               over 10 years.Hire Indian developers or build a development team,
               all according to your work requirements.
             </p>
-            <Button>Start a Project</Button>
+            <Link href="/hire-developer-form" passHref>
+              <Button>Start a Project</Button>
+            </Link>
           </div>
         </div>
       </div>

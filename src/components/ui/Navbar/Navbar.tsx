@@ -16,6 +16,27 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NavigationItems } from "./constant";
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
+import {
+  FaReact,
+  FaPhp,
+  FaWordpress,
+  FaNodeJs,
+  FaDatabase,
+  FaPython,
+  FaMagento,
+  FaApple,
+} from "react-icons/fa"; // Example icons for React, PHP, WordPress, Node.js
+import {
+  SiMongodb,
+  SiExpress,
+  SiNextdotjs,
+  SiGraphql,
+  SiAngular,
+  SiShopify,
+  SiAndroid,
+  SiVuedotjs,
+} from "react-icons/si";
+import { FaFaceLaughSquint } from "react-icons/fa6";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -152,16 +173,129 @@ const Navbar: React.FC = () => {
                   Technologies
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {NavigationItems.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[800px]">
+                    <ListItem href="/technologies/php" title="PHP">
+                      <FaPhp className="inline-block mr-2 text-indigo-500" />
+                      PHP Development
+                      <p className="text-sm text-gray-600">
+                        Server-side scripting for web development.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/react" title="React JS">
+                      <FaReact className="inline-block mr-2 text-blue-500" />
+                      React JS
+                      <p className="text-sm text-gray-600">
+                        Build dynamic and interactive user interfaces.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/shopify" title="Shopify">
+                      <SiShopify className="inline-block mr-2 text-green-500" />
+                      Shopify Development
+                      <p className="text-sm text-gray-600">
+                        E-commerce platform for online stores.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/android" title="Android">
+                      <SiAndroid className="inline-block mr-2 text-green-700" />
+                      Android Development
+                      <p className="text-sm text-gray-600">
+                        Mobile app development for Android devices.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/mean" title="MEAN Stack">
+                      <FaNodeJs className="inline-block mr-2 text-green-500" />
+                      Node.js
+                      <SiMongodb className="inline-block mr-2 text-green-400" />
+                      MongoDB
+                      <SiExpress className="inline-block mr-2 text-gray-500" />
+                      Express
+                      <SiAngular className="inline-block mr-2 text-red-600" />
+                      Angular
+                      <p className="text-sm text-gray-600">
+                        Full-stack JavaScript development using MongoDB,
+                        Express, Angular, and Node.js.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/python" title="Python">
+                      <FaPython className="inline-block mr-2 text-yellow-500" />
+                      Python Development
+                      <p className="text-sm text-gray-600">
+                        Versatile programming language for various applications.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/magento" title="Magento">
+                      <FaMagento className="inline-block mr-2 text-red-600" />
+                      Magento Development
+                      <p className="text-sm text-gray-600">
+                        E-commerce platform for building online stores.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/ios" title="iOS">
+                      <FaApple className="inline-block mr-2 text-black" />
+                      iOS Development
+                      <p className="text-sm text-gray-600">
+                        Mobile app development for iOS devices.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/mern" title="MERN Stack">
+                      <FaNodeJs className="inline-block mr-2 text-green-500" />
+                      Node.js
+                      <SiMongodb className="inline-block mr-2 text-green-400" />
+                      MongoDB
+                      <SiExpress className="inline-block mr-2 text-gray-500" />
+                      Express
+                      <SiNextdotjs className="inline-block mr-2 text-black" />
+                      Next.js
+                      <p className="text-sm text-gray-600">
+                        Full-stack JavaScript development using MongoDB,
+                        Express, React, and Node.js.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/flutter" title="Flutter">
+                      <FaFaceLaughSquint className="inline-block mr-2 text-blue-500" />
+                      Flutter Development
+                      <p className="text-sm text-gray-600">
+                        UI toolkit for building natively compiled applications.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/vue" title="Vue JS">
+                      <SiVuedotjs className="inline-block mr-2 text-green-600" />
+                      Vue JS
+                      <p className="text-sm text-gray-600">
+                        Progressive JavaScript framework for building UIs.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/nodejs" title="Node.js">
+                      <FaNodeJs className="inline-block mr-2 text-green-500" />
+                      Node.js Development
+                      <p className="text-sm text-gray-600">
+                        JavaScript runtime built on Chrome's V8 engine.
+                      </p>
+                    </ListItem>
+                    <ListItem
+                      href="/technologies/react-native"
+                      title="React Native"
+                    >
+                      <FaReact className="inline-block mr-2 text-blue-500" />
+                      React Native
+                      <p className="text-sm text-gray-600">
+                        Build native mobile apps using React.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/wordpress" title="WordPress">
+                      <FaWordpress className="inline-block mr-2 text-blue-900" />
+                      WordPress Development
+                      <p className="text-sm text-gray-600">
+                        Content management system for building websites.
+                      </p>
+                    </ListItem>
+                    <ListItem href="/technologies/angular" title="Angular">
+                      <SiAngular className="inline-block mr-2 text-red-600" />
+                      Angular Development
+                      <p className="text-sm text-gray-600">
+                        Platform for building single-page client applications.
+                      </p>
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
