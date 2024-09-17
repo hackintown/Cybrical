@@ -215,7 +215,9 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <Button>Start a Project</Button>
+          <Link href="/contact-us" passHref>
+            <Button>Start a Project</Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -300,16 +302,32 @@ const Navbar: React.FC = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className="pl-4"
                 >
-                  <Link href="/web-development" onClick={handleCloseSidebar} className="block py-2">
+                  <Link
+                    href="/web-development"
+                    onClick={handleCloseSidebar}
+                    className="block py-2"
+                  >
                     Web Development
                   </Link>
-                  <Link href="/agile-development" onClick={handleCloseSidebar} className="block py-2">
+                  <Link
+                    href="/agile-development"
+                    onClick={handleCloseSidebar}
+                    className="block py-2"
+                  >
                     Agile Development
                   </Link>
-                  <Link href="/cloud-devops" onClick={handleCloseSidebar} className="block py-2">
+                  <Link
+                    href="/cloud-devops"
+                    onClick={handleCloseSidebar}
+                    className="block py-2"
+                  >
                     Cloud & DevOps
                   </Link>
-                  <Link href="/app-development" onClick={handleCloseSidebar} className="block py-2">
+                  <Link
+                    href="/app-development"
+                    onClick={handleCloseSidebar}
+                    className="block py-2"
+                  >
                     Application Development
                   </Link>
                 </motion.div>
@@ -354,13 +372,25 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Static Links */}
-            <Link href="/work" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+            <Link
+              href="/work"
+              onClick={handleCloseSidebar}
+              className="block py-2 text-foreground"
+            >
               Work
             </Link>
-            <Link href="/company" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+            <Link
+              href="/company"
+              onClick={handleCloseSidebar}
+              className="block py-2 text-foreground"
+            >
               Company
             </Link>
-            <Link href="/hire-developer" onClick={handleCloseSidebar} className="block py-2 text-foreground">
+            <Link
+              href="/hire-developer"
+              onClick={handleCloseSidebar}
+              className="block py-2 text-foreground"
+            >
               Hire Developer
             </Link>
 

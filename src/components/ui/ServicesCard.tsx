@@ -26,7 +26,7 @@ const ServicesCard = ({
       {servicesItem.map((service) => (
         <li
           key={service.id}
-          className="bg-[#F9F9F9] rounded-xl w-full h-[345px] p-8 shadow-sm hover:bg-white transition-colors duration-300"
+          className="bg-[#F9F9F9] rounded-xl w-full h-[345px] p-8 shadow-sm hover:bg-white hover:shadow-md transition-colors duration-300"
         >
           <div className="mb-4 w-11 h-11">{service.itemIcon}</div>
           <h2 className="text-[#1D3A36] font-semibold text-[18px] mb-3">

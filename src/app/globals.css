@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Swiper Styles */
+@import 'swiper/swiper-bundle.css';
 
 :root {
   /* Light Mode Colors */
@@ -122,3 +124,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
