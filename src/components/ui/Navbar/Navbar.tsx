@@ -17,26 +17,210 @@ import {
 import { NavigationItems } from "./constant";
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
 import {
-  FaReact,
   FaPhp,
-  FaWordpress,
+  FaReact,
   FaNodeJs,
-  FaDatabase,
   FaPython,
   FaMagento,
   FaApple,
-} from "react-icons/fa"; // Example icons for React, PHP, WordPress, Node.js
+  FaWordpress,
+} from "react-icons/fa";
 import {
-  SiMongodb,
-  SiExpress,
-  SiNextdotjs,
-  SiGraphql,
-  SiAngular,
   SiShopify,
   SiAndroid,
+  SiMongodb,
+  SiExpress,
+  SiAngular,
+  SiNextdotjs,
   SiVuedotjs,
 } from "react-icons/si";
 import { FaFaceLaughSquint } from "react-icons/fa6";
+
+const servicesData = [
+  {
+    title: "Web Development",
+    href: "/web-development",
+    description:
+      "With impeccable precision through our web development services; marked by technical supremacy to create a robust two-way handshake.",
+  },
+  {
+    title: "Agile Development",
+    href: "/agile-development",
+    description:
+      "We are a leading web application development company that offers a fully functional…",
+  },
+  {
+    title: "Cloud & DevOps",
+    href: "/cloud-devops",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "Application Development",
+    href: "/app-development",
+    description:
+      "We are a leading web application development company that offers a fully functional…",
+  },
+  {
+    title: "Mobile App Development",
+    href: "/mbl-app-development",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "Digital Marketing",
+    href: "/digital-marketing",
+    description:
+      "With impeccable precision through our web development services; marked by technical supremacy to create a robust two-way handshake.",
+  },
+  {
+    title: "Website Suport & Maintenance",
+    href: "/website-maintenance",
+    description:
+      "We are a leading web application development company that offers a fully functional…",
+  },
+  {
+    title: "Technology Audit And Consultancy",
+    href: "/audit-consultancy",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "Quality Assurance",
+    href: "/quality-assurance",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "About Us",
+    href: "/about-us",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "Careers",
+    href: "/careers",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+  {
+    title: "Hire Developer",
+    href: "/hire-developers",
+    description:
+      "Transform how you use technology to achieve your business objectives…",
+  },
+];
+
+const technologiesData = [
+  {
+    title: "PHP",
+    name: "PHP Development",
+    href: "/contact-us",
+    icon: <FaPhp className="inline-block mr-2 size-5 text-indigo-500" />,
+    description: "Server-side scripting for web development.",
+  },
+  {
+    title: "React JS",
+    name: "React JS",
+    href: "/technologies/react",
+    icon: <FaReact className="inline-block mr-2 size-5 text-blue-500" />,
+    description: "Build dynamic and interactive user interfaces.",
+  },
+  {
+    title: "Shopify",
+    name: "Shopify Development",
+    href: "/technologies/shopify",
+    icon: <SiShopify className="inline-block mr-2 size-5 text-green-500" />,
+    description: "E-commerce platform for online stores.",
+  },
+  {
+    title: "Android",
+    name: "Android Development",
+    href: "/technologies/android",
+    icon: <SiAndroid className="inline-block mr-2 size-5 text-green-700 " />,
+    description: "Mobile app development for Android devices.",
+  },
+  {
+    title: "Python",
+    name: "Python Development",
+    href: "/technologies/python",
+    icon: <FaPython className="inline-block mr-2 size-5 text-yellow-500" />,
+    description: "Versatile programming language for various applications.",
+  },
+  {
+    title: "Magento",
+    name: "Magento Development",
+    href: "/technologies/magento",
+    icon: <FaMagento className="inline-block mr-2 size-5 text-red-600" />,
+    description: "E-commerce platform for building online stores.",
+  },
+  {
+    title: "iOS",
+    name: "iOS Development",
+    href: "/technologies/ios",
+    icon: <FaApple className="inline-block mr-2 size-5 text-black" />,
+    description: "Mobile app development for iOS devices.",
+  },
+  {
+    title: "MERN Stack",
+    name: "MERN Stack",
+    href: "/technologies/mern",
+    icon: (
+      <>
+        <FaNodeJs className="inline-block mr-2 size-5 text-green-500" />
+        <SiMongodb className="inline-block mr-2 size-5 text-green-400" />
+        <SiExpress className="inline-block mr-2 size-5 text-gray-500" />
+        <SiNextdotjs className="inline-block mr-2 size-5 text-black" />
+      </>
+    ),
+    description:
+      "Full-stack JavaScript development using MongoDB, Express, React, and Node.js.",
+  },
+  {
+    title: "Flutter",
+    name: "Flutter Development",
+    href: "/technologies/flutter",
+    icon: (
+      <FaFaceLaughSquint className="inline-block mr-2 size-5 text-blue-500" />
+    ),
+    description: "UI toolkit for building natively compiled applications.",
+  },
+  {
+    title: "Vue JS",
+    name: "Vue JS",
+    href: "/technologies/vue",
+    icon: <SiVuedotjs className="inline-block mr-2 size-5 text-green-600" />,
+    description: "Progressive JavaScript framework for building UIs.",
+  },
+  {
+    title: "Node.js",
+    name: "Node.js Development",
+    href: "/technologies/nodejs",
+    icon: <FaNodeJs className="inline-block mr-2 size-5 text-green-500" />,
+    description: "JavaScript runtime built on Chrome's V8 engine.",
+  },
+  {
+    title: "React Native",
+    name: "React Native",
+    href: "/technologies/react-native",
+    icon: <FaReact className="inline-block mr-2 size-5 text-blue-500" />,
+    description: "Build native mobile apps using React.",
+  },
+  {
+    title: "WordPress",
+    name: "WordPress Development",
+    href: "/technologies/wordpress",
+    icon: <FaWordpress className="inline-block mr-2 size-5 text-blue-900" />,
+    description: "Content management system for building websites.",
+  },
+  {
+    title: "Angular",
+    name: "Angular Development",
+    href: "/technologies/angular",
+    icon: <SiAngular className="inline-block mr-2 size-5 text-red-600" />,
+    description: "Platform for building single-page client applications.",
+  },
+];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,77 +278,15 @@ const Navbar: React.FC = () => {
                     </NavigationMenuLink>
                   </div>
                   <ul className="grid w-[400px] gap-2 p-1 md:w-[500px] md:grid-cols-3 lg:w-[600px] xl:w-[700px]">
-                    <ListItem href="/web-development" title="Web Development">
-                      With impeccable precision through our web development
-                      services; marked by technical supremacy to create a robust
-                      two-way handshake.
-                    </ListItem>
-                    <ListItem
-                      href="/agile-development"
-                      title="Agile Development"
-                    >
-                      We are a leading web application development company that
-                      offers a fully functional…
-                    </ListItem>
-                    <ListItem href="/cloud-devops" title="Cloud & DevOps">
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem
-                      href="/app-development"
-                      title="Application Development"
-                    >
-                      We are a leading web application development company that
-                      offers a fully functional…
-                    </ListItem>
-                    <ListItem
-                      href="/mbl-app-development"
-                      title="Mobile App Development"
-                    >
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem
-                      href="/digital-marketing"
-                      title="Digital Marketing"
-                    >
-                      With impeccable precision through our web development
-                      services; marked by technical supremacy to create a robust
-                      two-way handshake.
-                    </ListItem>
-                    <ListItem
-                      href="/website-maintenance"
-                      title="Website Suport & Maintenance"
-                    >
-                      We are a leading web application development company that
-                      offers a fully functional…
-                    </ListItem>
-                    <ListItem
-                      href="/audit-consultancy"
-                      title="Technology Audit And Consultancy"
-                    >
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem
-                      href="/quality-assurance"
-                      title="Quality Assurance"
-                    >
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem href="/about-us" title="About Us">
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem href="/careers" title="Careers">
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
-                    <ListItem href="/hire-developers" title="Hire Developer">
-                      Transform how you use technology to achieve your business
-                      objectives…
-                    </ListItem>
+                    {servicesData.map((service) => (
+                      <ListItem
+                        key={service.title}
+                        title={service.title}
+                        href={service.href}
+                      >
+                        {service.description}
+                      </ListItem>
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -174,128 +296,17 @@ const Navbar: React.FC = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[800px]">
-                    <ListItem href="/technologies/php" title="PHP">
-                      <FaPhp className="inline-block mr-2 text-indigo-500" />
-                      PHP Development
-                      <p className="text-sm text-gray-600">
-                        Server-side scripting for web development.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/react" title="React JS">
-                      <FaReact className="inline-block mr-2 text-blue-500" />
-                      React JS
-                      <p className="text-sm text-gray-600">
-                        Build dynamic and interactive user interfaces.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/shopify" title="Shopify">
-                      <SiShopify className="inline-block mr-2 text-green-500" />
-                      Shopify Development
-                      <p className="text-sm text-gray-600">
-                        E-commerce platform for online stores.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/android" title="Android">
-                      <SiAndroid className="inline-block mr-2 text-green-700" />
-                      Android Development
-                      <p className="text-sm text-gray-600">
-                        Mobile app development for Android devices.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/mean" title="MEAN Stack">
-                      <FaNodeJs className="inline-block mr-2 text-green-500" />
-                      Node.js
-                      <SiMongodb className="inline-block mr-2 text-green-400" />
-                      MongoDB
-                      <SiExpress className="inline-block mr-2 text-gray-500" />
-                      Express
-                      <SiAngular className="inline-block mr-2 text-red-600" />
-                      Angular
-                      <p className="text-sm text-gray-600">
-                        Full-stack JavaScript development using MongoDB,
-                        Express, Angular, and Node.js.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/python" title="Python">
-                      <FaPython className="inline-block mr-2 text-yellow-500" />
-                      Python Development
-                      <p className="text-sm text-gray-600">
-                        Versatile programming language for various applications.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/magento" title="Magento">
-                      <FaMagento className="inline-block mr-2 text-red-600" />
-                      Magento Development
-                      <p className="text-sm text-gray-600">
-                        E-commerce platform for building online stores.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/ios" title="iOS">
-                      <FaApple className="inline-block mr-2 text-black" />
-                      iOS Development
-                      <p className="text-sm text-gray-600">
-                        Mobile app development for iOS devices.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/mern" title="MERN Stack">
-                      <FaNodeJs className="inline-block mr-2 text-green-500" />
-                      Node.js
-                      <SiMongodb className="inline-block mr-2 text-green-400" />
-                      MongoDB
-                      <SiExpress className="inline-block mr-2 text-gray-500" />
-                      Express
-                      <SiNextdotjs className="inline-block mr-2 text-black" />
-                      Next.js
-                      <p className="text-sm text-gray-600">
-                        Full-stack JavaScript development using MongoDB,
-                        Express, React, and Node.js.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/flutter" title="Flutter">
-                      <FaFaceLaughSquint className="inline-block mr-2 text-blue-500" />
-                      Flutter Development
-                      <p className="text-sm text-gray-600">
-                        UI toolkit for building natively compiled applications.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/vue" title="Vue JS">
-                      <SiVuedotjs className="inline-block mr-2 text-green-600" />
-                      Vue JS
-                      <p className="text-sm text-gray-600">
-                        Progressive JavaScript framework for building UIs.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/nodejs" title="Node.js">
-                      <FaNodeJs className="inline-block mr-2 text-green-500" />
-                      Node.js Development
-                      <p className="text-sm text-gray-600">
-                        JavaScript runtime built on Chrome's V8 engine.
-                      </p>
-                    </ListItem>
-                    <ListItem
-                      href="/technologies/react-native"
-                      title="React Native"
-                    >
-                      <FaReact className="inline-block mr-2 text-blue-500" />
-                      React Native
-                      <p className="text-sm text-gray-600">
-                        Build native mobile apps using React.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/wordpress" title="WordPress">
-                      <FaWordpress className="inline-block mr-2 text-blue-900" />
-                      WordPress Development
-                      <p className="text-sm text-gray-600">
-                        Content management system for building websites.
-                      </p>
-                    </ListItem>
-                    <ListItem href="/technologies/angular" title="Angular">
-                      <SiAngular className="inline-block mr-2 text-red-600" />
-                      Angular Development
-                      <p className="text-sm text-gray-600">
-                        Platform for building single-page client applications.
-                      </p>
-                    </ListItem>
+                    {technologiesData.map((tech, index) => (
+                      <ListItem
+                        key={index}
+                        title={tech.title}
+                        name={tech.name}
+                        href={tech.href}
+                        icon={tech.icon}
+                      >
+                        {tech.description}
+                      </ListItem>
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -541,29 +552,40 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          ref={ref}
-          href="href"
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-primary",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-normal font-medium leading-none">{title}</div>
-          <p className="line-clamp-3 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
+  title: string;
+  name: string;
+  href: string;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
+  ({ className, title, name, children, icon, href, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <Link
+            ref={ref}
+            href="href"
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-primary",
+              className
+            )}
+            {...props}
+          >
+            <div className="text-normal font-medium leading-none">{title}</div>
+            <div className="text-sm text-muted-foreground">
+              <span>{icon} </span> {name}
+            </div>
+
+            <p className="line-clamp-3 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
 ListItem.displayName = "ListItem";
