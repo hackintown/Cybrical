@@ -160,7 +160,7 @@ export default function ScrollableTabsButtonAuto() {
           className="rounded-bl-xl rounded-br-xl rounded-tr-xl"
         >
           <TabPanel value={value} index={0}>
-            <div className="flex flex-col sm:flex-row gap-y-8 lg:gap-y-0 items-center justify-between px-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 lg:gap-y-0 items-center justify-between px-2">
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
                   <Image
@@ -172,7 +172,9 @@ export default function ScrollableTabsButtonAuto() {
                     priority
                   />
                 </div>
-                <p className="text-white">Amazon Aurora</p>
+                <p className="text-white text-center text-sm lg:text-base">
+                  Amazon Aurora
+                </p>
               </div>
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="bg-[#FEC327] rounded-full border border-border w-[72px] h-[72px] flex items-center justify-center">
@@ -184,7 +186,9 @@ export default function ScrollableTabsButtonAuto() {
                     alt="AWS RDS"
                   />
                 </div>
-                <p className="text-white">AWS RDS</p>
+                <p className="text-white text-center text-sm lg:text-base">
+                  AWS RDS
+                </p>
               </div>
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="bg-[#13AA52] rounded-full w-[72px] h-[72px] flex items-center justify-center">
@@ -196,7 +200,9 @@ export default function ScrollableTabsButtonAuto() {
                     alt="MongoDB"
                   />
                 </div>
-                <p className="text-white">MongoDB</p>
+                <p className="text-white text-sm text-center lg:text-base">
+                  MongoDB
+                </p>
               </div>
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="rounded-full w-[72px] h-[72px] flex items-center justify-center">
@@ -208,11 +214,13 @@ export default function ScrollableTabsButtonAuto() {
                     alt="MySQL"
                   />
                 </div>
-                <p className="text-white">MySQL</p>
+                <p className="text-white text-center text-sm lg:text-base">
+                  MySQL
+                </p>
               </div>
             </div>
           </TabPanel>
-          <TabPanel value={value} index={1}>
+          {/* <TabPanel value={value} index={1}>
             <div className="flex flex-col sm:flex-row gap-y-8 lg:gap-y-0 items-center justify-between px-2">
               <div className="flex flex-col space-y-2 items-center justify-center">
                 <div className="rounded-full shadow-sm w-[72px] h-[72px] flex items-center justify-center">
@@ -529,7 +537,7 @@ export default function ScrollableTabsButtonAuto() {
                 <p className="text-white">MySQL</p>
               </div>
             </div>
-          </TabPanel>
+          </TabPanel> */}
         </div>
       </Box>
     </div>
