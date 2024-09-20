@@ -13,6 +13,7 @@ import OfficeAddress from "./OfficeAddress";
 import Button from "../Button";
 import Image from "next/image";
 import ContactPopup from "./ContactPopup";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -58,9 +59,9 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="">
+          <Link href="/contact-us" passHref>
             <Button>Start a Project</Button>
-          </div>
+          </Link>
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-12 border-t border-[#154E47]">

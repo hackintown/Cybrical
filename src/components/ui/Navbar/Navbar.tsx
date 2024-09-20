@@ -57,13 +57,13 @@ const servicesData = [
   },
   {
     title: "Application Development",
-    href: "/app-development",
+    href: "/application-development",
     description:
       "We are a leading web application development company that offers a fully functional…",
   },
   {
     title: "Mobile App Development",
-    href: "/mbl-app-development",
+    href: "/interface-design",
     description:
       "Transform how you use technology to achieve your business objectives…",
   },
@@ -266,7 +266,7 @@ const Navbar: React.FC = () => {
                     <NavigationMenuLink asChild>
                       <Link
                         className="flex h-full w-full select-none flex-col justify-start rounded-md rounded-r-none border-r border-r-gray-200 p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
+                        href="/contact-us"
                       >
                         <div className="text-[#13182C] text-[25px] font-bold mb-4">
                           Custom software development services
@@ -469,7 +469,7 @@ const Navbar: React.FC = () => {
                     Cloud & DevOps
                   </Link>
                   <Link
-                    href="/app-development"
+                    href="/application-development"
                     onClick={handleCloseSidebar}
                     className="block py-2"
                   >
@@ -554,7 +554,7 @@ export default Navbar;
 
 interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
   title: string;
-  name: string;
+  name?: string;
   href: string;
   icon?: React.ReactNode;
   children: React.ReactNode;
@@ -567,7 +567,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
         <NavigationMenuLink asChild>
           <Link
             ref={ref}
-            href="href"
+            href={href}
             className={cn(
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  hover:text-primary",
               className
@@ -576,7 +576,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
           >
             <div className="text-normal font-medium leading-none">{title}</div>
             <div className="text-sm text-muted-foreground">
-              <span>{icon} </span> {name}
+              <span>{icon} </span> {name || ""}
             </div>
 
             <p className="line-clamp-3 text-sm leading-snug text-muted-foreground">

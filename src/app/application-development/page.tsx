@@ -9,7 +9,7 @@ import React from "react";
 type Props = {};
 
 const page = (props: Props) => {
-  const pathname = "/app-development";
+  const pathname = "/application-development";
   const content = contentMap[pathname] || contentMap["/web-development"];
   return (
     <main>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "../Button";
+import Link from "next/link";
 
 type Service = string;
 
@@ -48,11 +49,13 @@ const ContentSection = ({
     <p className="text-xs sm:text-sm mb-6 font-light leading-normal text-center md:text-left">
       {rightExtraParagraph}
     </p>
-    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <Button className="my-2 font-base bg-white !text-primary">
-        Start a Project
-      </Button>
-    </motion.div>
+    <Link href="/contact-us" passHref>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <Button className="my-2 font-base bg-white !text-primary">
+          Start a Project
+        </Button>
+      </motion.div>
+    </Link>
   </div>
 );
 

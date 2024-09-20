@@ -4,6 +4,7 @@ import Button from "../../../components/ui/Button";
 import { BackgroundRight, StarSvg } from "../../ui/BannerIcon/Icons";
 import { FlipWords } from "@/components/ui/flip-words";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import Link from "next/link";
 
 const Banner = () => {
   const words = ["Solutions", "Services", "Projects", "Ideas", "Innovations"];
@@ -45,7 +46,9 @@ const Banner = () => {
               services company Avya Tech helps you maximize the paybacks of your
               IT investment by optimizing IT workflows in the cloud.
             </p>
-            <Button className="my-5 font-base">Start a Project</Button>
+            <Link href="/contact-us" passHref>
+              <Button className="my-5 font-base">Start a Project</Button>
+            </Link>
           </div>
         </div>
       </div>

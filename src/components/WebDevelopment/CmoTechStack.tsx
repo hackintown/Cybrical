@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "../ui/Button";
+import Link from "next/link";
 const services = [
   {
     name: "Custom Web Application Development",
@@ -51,11 +52,13 @@ const ContentSection = () => (
       <span className="text-[#202020]">WordPress web development </span> tools
       and services.
     </p>
-    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <Button className="my-2 font-base !bg-black text-white">
-        Start a Project
-      </Button>
-    </motion.div>
+    <Link href="/contact-us" passHref>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <Button className="my-2 font-base !bg-black text-white">
+          Start a Project
+        </Button>
+      </motion.div>
+    </Link>
   </div>
 );
 

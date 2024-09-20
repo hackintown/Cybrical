@@ -12,7 +12,7 @@ import React from "react";
 type Props = {};
 
 const page = (props: Props) => {
-  const pathname = "/mbl-app-development";
+  const pathname = "/interface-design";
   const content = contentMap[pathname] || contentMap["/web-development"];
   return (
     <main>

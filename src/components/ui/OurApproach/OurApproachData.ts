@@ -43,7 +43,7 @@ export const contentMap: { [key: string]: ContentType } = {
       "DevOps simplifies the complexity as it applies to the entire software delivery process. DevOps service providers help business organizations drive business success by achieving their vision and accelerating the SLDC. It is great for managing the IT infrastructure and integrating the build, test, and deployment process.",
     imageSrc: "/images/cloud-approach.webp",
   },
-  "/app-development": {
+  "/application-development": {
     title: "OUR APPROACH",
     subtitle: "OUR APPROACH",
     heading: "Delivering End-to-End Web app",
@@ -54,7 +54,7 @@ export const contentMap: { [key: string]: ContentType } = {
       "We develop B2B and B2C web applications using cutting-edge technology and tools to meet business challenges. We develop CMS web applications for you that are complex yet easy to use and manageable.",
     imageSrc: "/images/app-dev-approach.webp",
   },
-  "/mbl-app-development": {
+  "/interface-design": {
     title: "OUR APPROACH",
     subtitle: "OUR APPROACH",
     heading: "Delivering End-to-End Web app",

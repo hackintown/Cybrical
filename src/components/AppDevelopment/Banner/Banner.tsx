@@ -4,6 +4,7 @@ import Button from "../../../components/ui/Button";
 import { BackgroundRight, StarSvg } from "../../ui/BannerIcon/Icons";
 import { FlipWords } from "@/components/ui/flip-words";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import Link from "next/link";
 
 const Banner = () => {
   const words = ["Solutions", "Services", "Projects", "Ideas", "Innovations"];
@@ -46,7 +47,9 @@ const Banner = () => {
               effectively. Work with us to get all the insights and expertise
               you need to engage online audiences.
             </p>
-            <Button className="my-5 font-base">Start a Project</Button>
+            <Link href="/contact-us" passHref>
+              <Button className="my-5 font-base">Start a Project</Button>
+            </Link>
           </div>
 
           {/* Banner Image */}

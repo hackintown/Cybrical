@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   WebSvg,
   AppDevSVg,
@@ -18,10 +18,10 @@ interface ServicesItem {
   label: string;
   info: string;
   readMore: string;
+  href: string;
 }
 
 const Services: React.FC = () => {
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const servicesItem: ServicesItem[] = [
     {
       id: 1,
@@ -29,6 +29,7 @@ const Services: React.FC = () => {
       label: "Web development",
       info: "Our team of highly trained professionals will help take your business to the web and help it reach online audiences effectively work with us to get all the insights and expertise.",
       readMore: "Read more",
+      href: "/web-development",
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ const Services: React.FC = () => {
       label: "Interface design",
       info: "Our mobile app development is done with creativity and precision, so your business can seamlessly transition from website to app Build your brand engagement.",
       readMore: "Read more",
+      href: "/interface-design",
     },
     {
       id: 3,
@@ -43,13 +45,15 @@ const Services: React.FC = () => {
       label: "Application development",
       info: "We develop highly adaptive and functional web applications using the latest tools and cutting edge technologies. Get in touch with us to discuss your requirements.",
       readMore: "Read more",
+      href: "/application-development",
     },
     {
       id: 4,
       itemIcon: <MblAppDevSVg />,
-      label: "Mobile App development",
+      label: "Cloud & Devops Development",
       info: "Our mobile app development is done with creativity and precision, so your business can seamlessly transition from website to app Build your brand engagement.",
       readMore: "Read more",
+      href: "/cloud-devops",
     },
     {
       id: 5,
@@ -57,6 +61,7 @@ const Services: React.FC = () => {
       label: "Web support and maintenance",
       info: "Are you dealing with security patches, legacy code, or broken links on the website? Let our experts keep your website up-to-date, secure and bug-free.",
       readMore: "Read more",
+      href: "/website-maintenance",
     },
     {
       id: 6,
@@ -64,14 +69,9 @@ const Services: React.FC = () => {
       label: "Digital marketing",
       info: "Digital marketing is no longer an option but a necessity. We provide the best digital marketing services with our expert knowledge on strategy, design, and development.",
       readMore: "Read more",
+      href: "/digital-marketing",
     },
   ];
-
-  const toggleReadMore = (id: number) => {
-    setExpandedItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
 
   return (
     <div className="w-full py-10">
@@ -94,12 +94,7 @@ const Services: React.FC = () => {
             <Button className="mt-6 font-base ">Browse All Services</Button>
           </div>
         </div>
-        <ServicesCard
-          servicesItem={servicesItem}
-          ReadMoreSvg={ReadMoreSVg}
-          expandedItems={expandedItems}
-          toggleReadMore={toggleReadMore}
-        />
+        <ServicesCard servicesItem={servicesItem} ReadMoreSvg={ReadMoreSVg} />
       </div>
     </div>
   );

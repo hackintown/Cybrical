@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import InfoDataCounter from "@/components/ui/InfoDataCounter";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const stats = [
@@ -54,7 +55,9 @@ const About: React.FC = () => {
               industry. Lorem Ipsum has been the industry&apos;s standard dummy
               text ever since the 1500s, when an unknown printer.
             </p>
-            <Button className="hidden md:block my-4">Start a Project</Button>
+            <Link href="/contact-us" passHref>
+              <Button className="hidden md:block my-4">Start a Project</Button>
+            </Link>
           </div>
           <div className="w-full max-w-md md:max-w-xs lg:max-w-96 my-1">
             <Image
