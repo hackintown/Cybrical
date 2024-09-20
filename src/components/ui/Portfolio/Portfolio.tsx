@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+
+import React, { useRef, useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
@@ -8,39 +9,76 @@ import {
   Pagination,
 } from "swiper/modules";
 import Image from "next/image";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const Portfolio = () => {
-  const slides = [
-    { imageUrl: "/images/about-sec-img.png", alt: "Project 1" },
-    { imageUrl: "/images/about-sec-img.png", alt: "Project 2" },
-    { imageUrl: "/images/about-sec-img.png", alt: "Project 3" },
-  ];
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const slides = [
+  { imageUrl: "/images/portfolio-slide1.webp", alt: "Project 1" },
+  { imageUrl: "/images/portfolio-slide2.webp", alt: "Project 3" },
+  { imageUrl: "/images/portfolio-slide3.webp", alt: "Project 4" },
+  { imageUrl: "/images/portfolio-slide1.webp", alt: "Project 5" },
+  { imageUrl: "/images/portfolio-slide2.webp", alt: "Project 6" },
+  { imageUrl: "/images/portfolio-slide3.webp", alt: "Project 7" },
+  { imageUrl: "/images/portfolio-slide1.webp", alt: "Project 2" },
+  { imageUrl: "/images/portfolio-slide2.webp", alt: "Project 8" },
+  { imageUrl: "/images/portfolio-slide3.webp", alt: "Project 9" },
+];
+
+export default function Portfolio() {
+  const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handlePrev = useCallback(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  }, []);
+
+  const handleSlideChange = useCallback(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      setIsBeginning(swiperRef.current.swiper.isBeginning);
+      setIsEnd(swiperRef.current.swiper.isEnd);
+    }
+  }, []);
+
   return (
     <div className="relative">
       <div
-        className="absolute top-0 left-0 w-full h-full"
-        style={{
-          backgroundImage: `url('/images/services-tab-bg.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-        }}
+        className="absolute inset-0 bg-cover bg-bottom"
+        style={{ backgroundImage: `url('/images/services-tab-bg.png')` }}
+        aria-hidden="true"
       />
       <div className="container pt-10 relative">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-6xl font-bold text-green-100 relative">
             OUR PORTFOLIO
-            <span className="absolute inset-0 text-opacity-10 text-green-200">
+            <span
+              className="absolute inset-0 text-green-200 text-opacity-10"
+              aria-hidden="true"
+            >
               OUR PORTFOLIO
             </span>
           </h2>
-          <h5 className="text-accent text-xs md:text-sm mb-1.5 font-semibold -mt-5 relative">
+          <h3 className="text-accent text-xs md:text-sm mb-1.5 font-semibold -mt-5 relative">
             OUR PORTFOLIO
-          </h5>
-          <h3 className="text-2xl font-semibold mt-2">
+          </h3>
+          <h4 className="text-2xl font-semibold mt-2">
             The Best Projects That We
             <br />
             <span className="text-accent">Have Delivered</span>
-          </h3>
+          </h4>
           <p className="text-tertiary-foreground mt-2 lg:max-w-[590px] lg:mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard.
@@ -50,48 +88,111 @@ const Portfolio = () => {
         <div className="mt-10">
           <div className="relative w-full max-w-5xl mx-auto py-16">
             <Swiper
+              ref={swiperRef}
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
-              slidesPerView={3}
-              spaceBetween={-20}
+              slidesPerView={2.5}
+              spaceBetween={0}
+              initialSlide={2}
               coverflowEffect={{
-                rotate: 30, // Control the rotation
+                rotate: 50,
                 stretch: 0,
-                depth: 250, // Controls the perspective depth
+                depth: 250,
                 modifier: 1,
                 slideShadows: false,
               }}
               autoplay={{
-                delay: 2000, // Slide every 2 seconds
+                delay: 2000,
                 disableOnInteraction: false,
               }}
               loop={true}
-              navigation={true}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
               pagination={{
+                el: ".swiper-pagination",
                 clickable: true,
               }}
               modules={[EffectCoverflow, Navigation, Autoplay, Pagination]}
               className="swiper-container"
+              onSlideChange={handleSlideChange}
+              onSwiper={handleSlideChange}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1.5,
+                },
+                500: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 2.5,
+                },
+              }}
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index} className="swiper-slide">
-                  <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-xl">
+                  <div className="relative w-full h-[300px]  sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-xl">
                     <Image
                       src={slide.imageUrl}
                       alt={slide.alt}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
+            <button
+              onClick={handlePrev}
+              className={`absolute top-1/2 -left-9 sm:-left-10 lg:-left-20 transform -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full transition-all duration-300 ${
+                isBeginning
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:opacity-80"
+              }`}
+              aria-label="Previous slide"
+              disabled={isBeginning}
+            >
+              <Image
+                src={
+                  isBeginning
+                    ? "/images/portfolio-prev.webp"
+                    : "/images/portfolio-prev.webp"
+                }
+                alt="Previous"
+                width={45}
+                height={45}
+                className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
+              />
+            </button>
+            <button
+              onClick={handleNext}
+              className={`absolute top-1/2 -right-9 sm:-right-10 lg:-right-20 transform -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full transition-all duration-300 ${
+                isEnd ? "opacity-50 cursor-not-allowed" : "hover:opacity-80"
+              }`}
+              aria-label="Next slide"
+              disabled={isEnd}
+            >
+              <Image
+                src={
+                  isEnd
+                    ? "/images/portfolio-next.webp"
+                    : "/images/portfolio-next.webp"
+                }
+                alt="Next"
+                width={45}
+                height={45}
+                className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
+              />
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Portfolio;
+}

@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
           <div className="relative lg:pl-10 pt-6 lg:border-l lg:border-[#154E47]">
             <FooterLinks />
             <OfficeAddress />
-            <div className="absolute left-0 right-0 bottom-36 lg:bottom-40 w-full h-px bg-white after:content-[''] after:absolute after:w-full after:h-px after:bg-[#154E47]"></div>
+            <div className="absolute left-0 right-0 bottom-32 md:bottom-44 lg:bottom-40 w-full h-px bg-white after:content-[''] after:absolute after:w-full after:h-px after:bg-[#154E47]"></div>
           </div>
         </div>
       </div>

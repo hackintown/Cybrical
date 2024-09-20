@@ -14,24 +14,28 @@ const TestimonialCard: React.FC = () => {
       title: "Managing Director",
       quote:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/026/829/465/small_2x/beautiful-girl-with-autumn-leaves-photo.jpg",
+      image: "/images/testi-slide-1.webp",
     },
     {
-      name: "Manoj Kumar",
+      name: "Justine Gonzales",
       title: "Managing Director",
       quote:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image:
-        "https://img.freepik.com/free-photo/portrait-female-tourist-visiting-great-wall-china_23-2151261878.jpg",
+      image: "/images/testi-slide-2.webp",
     },
     {
       name: "Pankaj Kumar",
       title: "Managing Director",
       quote:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image:
-        "https://fashionstake.com/wp-content/uploads/2016/12/Indian-Beautiful-Girls.jpg",
+      image: "/images/testi-slide-3.webp",
+    },
+    {
+      name: "Pankaj Kumar",
+      title: "Managing Director",
+      quote:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      image: "/images/testi-slide-4.webp",
     },
   ];
 
@@ -68,7 +72,7 @@ const TestimonialCard: React.FC = () => {
             src={currentTestimonial.image}
             alt={`Testimonial Image of ${currentTestimonial.name}`}
             fill={true}
-            className="rounded-lg object-cover w-full h-full relative z-10"
+            className="rounded-lg object-cover w-full h-full relative z-10 bg-top"
           />
         </div>
 
