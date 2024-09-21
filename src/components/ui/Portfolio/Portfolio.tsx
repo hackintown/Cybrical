@@ -2,6 +2,7 @@
 
 import React, { useRef, useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
 import {
   EffectCoverflow,
   Navigation,
@@ -30,28 +31,28 @@ const slides = [
 ];
 
 export default function Portfolio() {
-  const swiperRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
   const handlePrev = useCallback(() => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
+    if (swiperInstance) {
+      swiperInstance.slidePrev();
     }
-  }, []);
+  }, [swiperInstance]);
 
   const handleNext = useCallback(() => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
+    if (swiperInstance) {
+      swiperInstance.slideNext();
     }
-  }, []);
+  }, [swiperInstance]);
 
   const handleSlideChange = useCallback(() => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      setIsBeginning(swiperRef.current.swiper.isBeginning);
-      setIsEnd(swiperRef.current.swiper.isEnd);
+    if (swiperInstance) {
+      setIsBeginning(swiperInstance.isBeginning);
+      setIsEnd(swiperInstance.isEnd);
     }
-  }, []);
+  }, [swiperInstance]);
 
   return (
     <div className="relative">
@@ -88,13 +89,13 @@ export default function Portfolio() {
         <div className="mt-10">
           <div className="relative w-full max-w-5xl mx-auto py-16">
             <Swiper
-              ref={swiperRef}
+              onSwiper={setSwiperInstance}
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={2.5}
               spaceBetween={0}
-              initialSlide={2}
+              initialSlide={3}
               coverflowEffect={{
                 rotate: 50,
                 stretch: 0,
@@ -118,7 +119,6 @@ export default function Portfolio() {
               modules={[EffectCoverflow, Navigation, Autoplay, Pagination]}
               className="swiper-container"
               onSlideChange={handleSlideChange}
-              onSwiper={handleSlideChange}
               breakpoints={{
                 320: {
                   slidesPerView: 1.5,
