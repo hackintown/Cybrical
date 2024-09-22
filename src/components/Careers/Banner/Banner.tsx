@@ -2,8 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../../../components/ui/Button";
 import { BackgroundRight, StarSvg } from "../../ui/BannerIcon/Icons";
-import { FlipWords } from "@/components/ui/flip-words";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
 import Link from "next/link";
 
 const Banner = () => {

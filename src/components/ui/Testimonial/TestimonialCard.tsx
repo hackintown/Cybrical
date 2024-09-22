@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaCircleArrowRight } from "react-icons/fa6";
 
@@ -39,28 +39,24 @@ const TestimonialCard: React.FC = () => {
     },
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
-  };
+  }, [testimonials.length]);
 
   // Autoplay feature using useEffect
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      if (currentSlide < testimonials.length - 1) {
-        nextSlide();
-      } else {
-        setCurrentSlide(0); // Loop back to the first slide
-      }
-    }, 3000); // Change slide every 5 seconds
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(slideInterval); // Cleanup interval on unmount
-  }, [currentSlide]);
+  }, [nextSlide]);
 
   const currentTestimonial = testimonials[currentSlide];
 
